@@ -4,20 +4,29 @@ using System.Text;
 
 namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
 {
-     class Datos
+     public class Datos //Almecena toda la información a consultar.
     {
-       public string Horarios()
-        {
-            string horario1 = "9:00am ", horario2 = "12:00pm ", horario3 = "15:00pm ", horario4 = "20:00pm ";
-            return (horario1 + horario2 + horario3 + horario4);
+        private string[] horario1 = new string[0]; //intancia del arrego                                           
+        private string[] horario2 = new string[0]; 
+        private string[] horario3 = new string[0];
+        private string[] horario4 = new string[0];
 
+        public void HorariosFerry()
+        {
+            horario1 = new string[] { "09:00 am" };
+            horario2 = new string[] { "12:00 pm" };
+            horario3 = new string[] { "15:00 pm" };
+            horario4 = new string[] { "20:00 pm" };
+
+            Console.WriteLine("1---" + horario1[0]);
+            Console.WriteLine("2---" + horario2[0]);
+            Console.WriteLine("3---" + horario3[0]);
+            Console.WriteLine("4---" + horario4[0]);
+            Console.WriteLine("5---" + "Salir");
         }
         
-         
-
-
-
-
-
     }
+   
+
+
 }

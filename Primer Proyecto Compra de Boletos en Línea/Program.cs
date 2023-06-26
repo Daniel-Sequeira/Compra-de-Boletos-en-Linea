@@ -4,14 +4,20 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main(string[] args)//Main es lo primero que llama y ejecuta el programa.
         {
-            ///Este es el Main del cual llamamos los métodos o clases
-            Datos horariosFerry = new Datos(); //Instancia de la clase Datos metodo Horarios
+           
+           Datos horarios = new Datos(); //Instancia de la clase Datos metodo Horarios
 
-            Console.WriteLine("Horarios Ferry Puntarenas---Paquera");//Titulo en pantalla que verá el usuario
-            Console.WriteLine(horariosFerry.Horarios());//Llamada de Clase Datos y Metodo Horarios
-            //Se debe hacer un arreglo mientras estoy probando que la llamda fincione (borrar esto al terminar)
+          Console.WriteLine("////// Horarios Ferry Puntarenas---Paquera//////");//Titulo en pantalla que verá el usuario
+            horarios.HorariosFerry(); //Muestra los horarios almacenados en arreglo horarios a traves del llamado metodo HorariosFerry
+
+
+       
+
+
+            
+          
            
             
 
