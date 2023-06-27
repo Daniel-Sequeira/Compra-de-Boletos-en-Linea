@@ -6,7 +6,7 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
 {
      public class Datos //Almecena toda la información a consultar.
     {
-        private string[] horario1 = new string[0]; //intancia del arrego                                           
+        private string[] horario1 = new string[0]; //instancia del arrego                                           
         private string[] horario2 = new string[0]; 
         private string[] horario3 = new string[0];
         private string[] horario4 = new string[0];
@@ -23,6 +23,10 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
         private string[] cliente10 = new string[4];
         private string[] cliente11 = new string[4];
         private string[] cliente12 = new string[4];
+
+        private string[] factura1 = new string[4];
+        private string[] factura2 = new string[4];
+
 
         public void HorariosFerry()
         {
@@ -51,6 +55,20 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
             cliente10 = new string[] { " Sthepanie " + " Quesada Rojas " + " 102230333 " + " squesada17@gmail.com " };
             cliente11 = new string[] { };
             cliente12 = new string[] { };
+        }
+
+        public void TarifaFerry()
+        {
+            int tarifa =  8000;
+            double iva = tarifa*0.16;
+            double total = tarifa + iva;
+        }
+
+        public string Facturas()
+        {
+            return
+            cliente11[0]+ cliente11[1];
+            
         }
         
     }
