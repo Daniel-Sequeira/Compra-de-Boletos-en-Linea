@@ -21,31 +21,39 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
                 int opcion;
 
                 Console.WriteLine("Elige tu horario con los números 1,2,3,4 o 5 para salir");//Titulo en pantalla
-                opcion = Convert.ToInt32(Console.ReadLine());
+                string numero = Console.ReadLine();
 
-                switch (opcion)
+                if (int.TryParse(numero, out opcion))
                 {
-                    case (1):
-                        Console.WriteLine("Elegiste el Horario 1"); //Debemos agregar codigo de l que sucede en cada opcion
-                        break;
-                    case (2):
-                        Console.WriteLine("Elegiste el Horario 2");
-                        break;
-                    case (3):
-                        Console.WriteLine("Elegiste el Horario 3");
-                        break;
-                    case (4):
-                        Console.WriteLine("Elegiste el Horario 4");
-                        break;
-                    case (5):
-                        continua = false;
-                        Console.WriteLine("Fue un placer servirle, adiós");
-                        break;
-                    default:
-                        Console.WriteLine("Por favor ingrese unicamente 1,2,3,4 o 5 para salir");
-                        break;
+                    switch (opcion)
+                    {
+                        case (1):
+                            Console.WriteLine("Elegiste el Horario 1"); //Debemos agregar codigo de l que sucede en cada opcion
+                            break;
+                        case (2):
+                            Console.WriteLine("Elegiste el Horario 2");
+                            break;
+                        case (3):
+                            Console.WriteLine("Elegiste el Horario 3");
+                            break;
+                        case (4):
+                            Console.WriteLine("Elegiste el Horario 4");
+                            break;
+                        case (5):
+                            continua = false;
+                            Console.WriteLine("Fue un placer servirle, adiós");
+                            break;
+                        default:
+                            Console.WriteLine("Por favor ingrese unicamente 1,2,3,4 o 5 para salir");
+                            break;
 
+                    }
                 }
+                else
+                {
+                    Console.WriteLine("Opcion invalida, digite 1,2,3,4 o 5 para salir");
+                }
+
                
                 Console.WriteLine();
             } while (continua);
