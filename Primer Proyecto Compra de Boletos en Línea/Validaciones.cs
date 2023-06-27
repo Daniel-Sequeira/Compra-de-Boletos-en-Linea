@@ -6,13 +6,14 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
 {
     class Validaciones
     {
+
         private const int V = 1;
         Datos horarios = new Datos(); //Instancia de la clase Datos metodo Horarios
+
 
         public void Menu ()
         {
           
-
            horarios.HorariosFerry(); //Muestra los horarios almacenados en arreglo horarios
 
             int opcion;
@@ -37,8 +38,11 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
                 case (5):
                     Console.WriteLine("Fue un placer servirle, adiós");
                     break;
+                default: Console.WriteLine("Por favor ingrese unicamente 1,2,3,4 o 5 para salir");
+                    break;
 
             }
+            Console.ReadKey();
 
 
 
@@ -47,7 +51,7 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
 
         }
 
-        public void Horario1()
+        public void Horario1()//aqui validación de cada horario
         {
 
         }
