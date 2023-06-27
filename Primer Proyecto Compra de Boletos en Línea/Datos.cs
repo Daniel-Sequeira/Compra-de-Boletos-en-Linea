@@ -40,6 +40,9 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
             Console.WriteLine("3---" + horario3[0]);
             Console.WriteLine("4---" + horario4[0]);
             Console.WriteLine("5---" + "Salir");
+
+            
+
         }
         public void ClientesFerry()
         {
