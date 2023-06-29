@@ -9,7 +9,7 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
 
         private const int V = 1;
         Datos horarios = new Datos(); //Instancia de la clase Datos metodo Horarios
-
+        
 
         public void Menu ()
         {
@@ -37,8 +37,6 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
                     break;
                 case (5):
                     Console.WriteLine("Fue un placer servirle, adiós");
-                    break;
-                default: Console.WriteLine("Por favor ingrese unicamente 1,2,3,4 o 5 para salir");
                     break;
 
             }
