@@ -9,12 +9,12 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
 
         private const int V = 1;
         Datos horarios = new Datos(); //Instancia de la clase Datos metodo Horarios
-        Datos registro = new Datos();
+        
 
-        public void Menu()
+        public void getMenu()
         {
 
-            horarios.HorariosFerry(); //Muestra los horarios almacenados en arreglo horarios
+            horarios.getHorariosFerry(); //Muestra los horarios almacenados en arreglo horarios
             bool continua = true;
             do
             {
@@ -29,24 +29,25 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
                     {
                         case (1):
                             Console.Clear();
+                            Datos registro = new Datos();
                             Console.WriteLine("***Registro de Clientes***");
-                            RegistroCliente();
+                            registro.getRegistroC11();
                            
                             break;
                         case (2):
                             Console.Clear();
                             Console.WriteLine("***Registro de Clientes***");
-                            RegistroCliente();
+                          
                             break;
                         case (3):
                             Console.Clear();
                             Console.WriteLine("***Registro de Clientes***");
-                            RegistroCliente();
+                            
                             break;
                         case (4):
                             Console.Clear();
                             Console.WriteLine("***Registro de Clientes***");
-                            RegistroCliente();
+                           
                             break;
                         case (5):
                             continua = false;
@@ -66,16 +67,8 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
 
 
         }
-        public void RegistroCliente()
-        {
-            registro.RegistroC11();
-           
+      
 
-        }
-
-        public void Facturar()
-        { }         
-            
     }
 
 }

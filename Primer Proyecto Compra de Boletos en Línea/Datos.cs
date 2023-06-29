@@ -25,12 +25,23 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
         public string[] cliente11 = new string[4];
         public string[] cliente12 = new string[4];
 
-        private int[] tarifa = new int [0];//Tarifas
-        private double[] iva = new double[0];
-        private double[] total = new double[0];
+        private double tarifa;//Datos facturardor
+        private double iva;
+        private double total;
 
+        public Datos()//Metodo que asigna valores a utilizar
+        {
+            tarifa = 8000;
+            iva = 0.16 * tarifa;
+            total = tarifa + iva;
+        }
+        public string getFacturas()//metodo get que retorna información a mostrar en pantalla desde llamada en main
+        {
+            return "Tarifa " + tarifa + "Impuesto " + iva + "Total" + total;
+        }
+          
 
-        public void HorariosFerry()
+        public void getHorariosFerry()
         {
             horario1 = new string[] { "09:00 am" };
             horario2 = new string[] { "12:00 pm" };
@@ -43,10 +54,8 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
             Console.WriteLine("4---" + horario4[0]);
             Console.WriteLine("5---" + "Salir");
 
-
-
         }
-        public void ClientesFerry()
+        public void getClientesFerry()
         {
 
             cliente1 = new string[] { " Roberto " + " Fernandez Esquivel " + " 101110222 " + " rfernandez@hotmail.com " };
@@ -62,10 +71,10 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
 
             cliente11 = new string[] { };
             cliente12 = new string[] { };
-            
 
 
-            foreach  (string muestraInfo1 in cliente1)
+
+            foreach (string muestraInfo1 in cliente1)
             {
                 Console.WriteLine(muestraInfo1 + " ");
             }
@@ -114,12 +123,13 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
                 Console.WriteLine(muestraInfo12 + " ");
             }
 
-          
+
 
         }
-        public void RegistroC11()
+
+        public void getRegistroC11()
         {
-            
+
             int decide;
             Console.WriteLine("Digite su nombre");
             cliente11[0] = Console.ReadLine();
@@ -128,7 +138,24 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
             Console.WriteLine("Digite su cédula");
             cliente11[2] = Console.ReadLine();
             Console.WriteLine("Digite su dirección email");
-            cliente11[3]= Console.ReadLine();
+            cliente11[3] = Console.ReadLine();
+            Console.WriteLine("Facturar digite (1) ///o (2) para Salir");
+            decide = Convert.ToInt32(Console.ReadLine());
+            
+
+        }
+
+        public void RegistroC12()
+        {
+            int decide;
+            Console.WriteLine("Digite su nombre");
+            cliente11[0] = Console.ReadLine();
+            Console.WriteLine("Digite sus apellidos");
+            cliente11[1] = Console.ReadLine();
+            Console.WriteLine("Digite su cédula");
+            cliente11[2] = Console.ReadLine();
+            Console.WriteLine("Digite su dirección email");
+            cliente11[3] = Console.ReadLine();
             Console.WriteLine("Facturar digite (1) ///o (2) para Salir");
             decide = Convert.ToInt32(Console.ReadLine());
             if (decide == 1)
@@ -137,25 +164,15 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
             }
             else { }
 
-          
+
 
         }
 
-        public void RegistroC12()
-        {
-            Console.WriteLine("Digite su nombre");
-            cliente12[0] = Console.ReadLine();
-            Console.WriteLine("Digite sus apellidos");
-            cliente12[1] = Console.ReadLine();
-            Console.WriteLine("Digite su cédula");
-            cliente12[2] = Console.ReadLine();
-            Console.WriteLine("Digite su dirección email");
-            cliente12[3] = Console.ReadLine();
 
-        }
-
-        
 
 
     }
+
+
+
 }
