@@ -9,12 +9,12 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
 
         private const int V = 1;
         Datos horarios = new Datos(); //Instancia de la clase Datos metodo Horarios
-        
+        Datos registro = new Datos();
 
-        public void Menu ()
+        public void Menu()
         {
-          
-           horarios.HorariosFerry(); //Muestra los horarios almacenados en arreglo horarios
+
+            horarios.HorariosFerry(); //Muestra los horarios almacenados en arreglo horarios
             bool continua = true;
             do
             {
@@ -28,20 +28,29 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
                     switch (opcion)
                     {
                         case (1):
-                            Console.WriteLine("Elegiste el Horario 1"); //Debemos agregar codigo de l que sucede en cada opcion
+                            Console.Clear();
+                            Console.WriteLine("***Registro de Clientes***");
+                            RegistroCliente();
+                           
                             break;
                         case (2):
-                            Console.WriteLine("Elegiste el Horario 2");
+                            Console.Clear();
+                            Console.WriteLine("***Registro de Clientes***");
+                            RegistroCliente();
                             break;
                         case (3):
-                            Console.WriteLine("Elegiste el Horario 3");
+                            Console.Clear();
+                            Console.WriteLine("***Registro de Clientes***");
+                            RegistroCliente();
                             break;
                         case (4):
-                            Console.WriteLine("Elegiste el Horario 4");
+                            Console.Clear();
+                            Console.WriteLine("***Registro de Clientes***");
+                            RegistroCliente();
                             break;
                         case (5):
                             continua = false;
-                            Console.WriteLine("Fue un placer servirle, adiós");
+
                             break;
 
                     }
@@ -51,20 +60,23 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
                     Console.WriteLine("Opcion invalida, digite 1,2,3,4 o 5 para salir");
                 }
 
-               
+
                 Console.ReadKey();
             } while (continua);
 
 
-
-
-
-
         }
-
-        public void Horario1()//aqui validación de cada horario
+        public void RegistroCliente()
         {
+            registro.RegistroC11();
+           
 
         }
+
+        public void Facturar()
+        { }         
+            
     }
+
 }
+

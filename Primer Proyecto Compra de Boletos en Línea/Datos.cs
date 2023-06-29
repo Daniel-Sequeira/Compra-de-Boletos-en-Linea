@@ -7,11 +7,11 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
     public class Datos //Almecena toda la información a consultar.
     {
         private string[] horario1 = new string[0]; //Declaración de arreglos                                           
-        private string[] horario2 = new string[0];
+        private string[] horario2 = new string[0];//Horarios
         private string[] horario3 = new string[0];
         private string[] horario4 = new string[0];
 
-        private string[] cliente1 = new string[3];
+        private string[] cliente1 = new string[3];//Clientes
         private string[] cliente2 = new string[3];
         private string[] cliente3 = new string[3];
         private string[] cliente4 = new string[3];
@@ -21,11 +21,13 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
         private string[] cliente8 = new string[3];
         private string[] cliente9 = new string[3];
         private string[] cliente10 = new string[3];
-        private string[] cliente11 = new string[3];
-        private string[] cliente12 = new string[3];
 
-        private string[] factura1 = new string[4];
-        private string[] factura2 = new string[4];
+        public string[] cliente11 = new string[4];
+        public string[] cliente12 = new string[4];
+
+        private int[] tarifa = new int [0];//Tarifas
+        private double[] iva = new double[0];
+        private double[] total = new double[0];
 
 
         public void HorariosFerry()
@@ -59,24 +61,8 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
             cliente10 = new string[] { " Sthepanie " + " Quesada Rojas " + " 102230333 " + " squesada17@gmail.com " };
 
             cliente11 = new string[] { };
-            Console.WriteLine("Digite su nombre");
-            cliente11[0] = Console.ReadLine();
-            Console.WriteLine("Digite sus apellidos");
-            cliente11[1] = Console.ReadLine();
-            Console.WriteLine("Digite su cédula");
-            cliente11[2] = Console.ReadLine();
-            Console.WriteLine("Digite su dirección email");
-            cliente11[3] = Console.ReadLine();
-
             cliente12 = new string[] { };
-            Console.WriteLine("Digite su nombre");
-            cliente12[0] = Console.ReadLine();
-            Console.WriteLine("Digite sus apellidos");
-            cliente12[1] = Console.ReadLine();
-            Console.WriteLine("Digite su cédula");
-            cliente12[2] = Console.ReadLine();
-            Console.WriteLine("Digite su dirección email");
-            cliente12[3] = Console.ReadLine();
+            
 
 
             foreach  (string muestraInfo1 in cliente1)
@@ -128,23 +114,47 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
                 Console.WriteLine(muestraInfo12 + " ");
             }
 
-            /*public void TarifaFerry()
-          {
+          
 
-              int tarifa = 8000;
-              double iva = tarifa * 0.16;
-              double total = tarifa + iva;
-          }
+        }
+        public void RegistroC11()
+        {
+            
+            int decide;
+            Console.WriteLine("Digite su nombre");
+            cliente11[0] = Console.ReadLine();
+            Console.WriteLine("Digite sus apellidos");
+            cliente11[1] = Console.ReadLine();
+            Console.WriteLine("Digite su cédula");
+            cliente11[2] = Console.ReadLine();
+            Console.WriteLine("Digite su dirección email");
+            cliente11[3]= Console.ReadLine();
+            Console.WriteLine("Facturar digite (1) ///o (2) para Salir");
+            decide = Convert.ToInt32(Console.ReadLine());
+            if (decide == 1)
+            {
+                Console.WriteLine("falta crear codigo facturador");
+            }
+            else { }
 
-          public string Facturas()
-          {
-              return
-              cliente11[0] + cliente11[1];
-
-          }*/
+          
 
         }
 
+        public void RegistroC12()
+        {
+            Console.WriteLine("Digite su nombre");
+            cliente12[0] = Console.ReadLine();
+            Console.WriteLine("Digite sus apellidos");
+            cliente12[1] = Console.ReadLine();
+            Console.WriteLine("Digite su cédula");
+            cliente12[2] = Console.ReadLine();
+            Console.WriteLine("Digite su dirección email");
+            cliente12[3] = Console.ReadLine();
+
+        }
+
+        
 
 
     }
