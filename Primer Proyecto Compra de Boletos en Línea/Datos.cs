@@ -25,7 +25,7 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
         private string cliente10;
 
         public string[] cliente11 = new string[4];
-        public string[] cliente12 = new string[3];
+        public string[] cliente12 = new string[4];
 
         private double tarifa;//Datos facturas
         private double iva;
@@ -53,6 +53,17 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
         {
             return "Cantidad----1  " + " Tarifa  " + tarifa + " Impuesto " + iva + " Total " + total;
          
+        }
+        public void registroCliente()
+        {
+            Console.WriteLine("Digite su nombre");
+            cliente11[0] = Console.ReadLine();
+            Console.WriteLine("Digite sus apellidos");
+            cliente11[1] = Console.ReadLine();
+            Console.WriteLine("Digite su cédula");
+            cliente11[2] = Console.ReadLine();
+            Console.WriteLine("Digite su dirección email");
+            cliente11[3] = Console.ReadLine();
         }
         
     

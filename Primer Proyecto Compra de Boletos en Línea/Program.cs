@@ -31,25 +31,11 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
                     {
                         
                         case (1)://si usurio selecciona opcion 1 realizará
-                            
-                            
-                            
-                                Console.Clear();//limpia la pantalla de datos                         
-                                                //registro.getRegistroCliente();//Llama al metodo de registro clientes
-                                Console.WriteLine("***Registro de Clientes***");
-                                Console.WriteLine("Digite su nombre");
-                                registro.cliente11[0] = Console.ReadLine();
-                                Console.WriteLine("Digite sus apellidos");
-                                registro.cliente11[1] = Console.ReadLine();
-                                Console.WriteLine("Digite su cédula");
-                                registro.cliente11[2] = Console.ReadLine();
-                                Console.WriteLine("Digite su dirección email");
-                                registro.cliente11[3] = Console.ReadLine();
-
-                                factura.getFacturaSiNo();
-                           
-                            
-
+                    
+                           Console.Clear();//limpia la pantalla de datos                         
+                            Console.WriteLine("***Registro de Clientes***");
+                             registro.registroCliente();
+                             factura.PreguntaSiNo();
                             break;//detiene el ciclo
 
                         case (2)://si usuario selecciona opcion 2 realizará

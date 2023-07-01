@@ -10,7 +10,7 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
         Datos factura = new Datos(); //Instancia Clase Datos metodo registros
         
         
-        public void getFacturaSiNo()
+        public void PreguntaSiNo()
         {
             char elegir;
             Console.WriteLine("Facturar digite (f) ///o (s) para Salir");
