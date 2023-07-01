@@ -7,23 +7,10 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
     class Validaciones
     {
         
-        Datos usuario = new Datos(); //Instancia Clase Datos metodo registros
+        Datos factura = new Datos(); //Instancia Clase Datos metodo registros
         
-        public void getRegistroCliente()
-        {
-           Console.WriteLine("***Registro de Clientes***");
-           Console.WriteLine("Digite su nombre");
-           usuario.cliente11[0] = Console.ReadLine();
-           Console.WriteLine("Digite sus apellidos");
-           usuario.cliente11[1] = Console.ReadLine();
-           Console.WriteLine("Digite su cédula");
-           usuario.cliente11[2] = Console.ReadLine();
-           Console.WriteLine("Digite su dirección email");
-           usuario.cliente11[3] = Console.ReadLine();
-           Console.ReadKey();
-               
-        }
-        public void FacturacionSiNo()
+        
+        public void getFacturaSiNo()
         {
             char elegir;
             Console.WriteLine("Facturar digite (f) ///o (s) para Salir");
@@ -33,7 +20,7 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
             {
                 Console.Clear();
 
-                Console.WriteLine("Factura");
+                Console.WriteLine(factura.getFacturas());
             }
             else if (elegir == 's' || elegir == 'S')
             {
