@@ -25,14 +25,29 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
 
                 if (int.TryParse(numero, out opcion)) //valida si es verdadero que el usuario digitó 1,2,3,4 o 5, de lo contrario Else.
                 {
+                    Validaciones factura = new Validaciones();
                     Datos registro = new Datos();
                     switch (opcion) //Realiza acciones de acuerdo a selección de usuario
                     {
                         
                         case (1)://si usurio selecciona opcion 1 realizará
-                            Console.Clear();//limpia la pantalla de datos                         
-                            registro.getRegistroCliente();//Llama al metodo de registro clientes
-                            Console.WriteLine("");
+                            
+                            
+                            
+                                Console.Clear();//limpia la pantalla de datos                         
+                                                //registro.getRegistroCliente();//Llama al metodo de registro clientes
+                                Console.WriteLine("***Registro de Clientes***");
+                                Console.WriteLine("Digite su nombre");
+                                registro.cliente11[0] = Console.ReadLine();
+                                Console.WriteLine("Digite sus apellidos");
+                                registro.cliente11[1] = Console.ReadLine();
+                                Console.WriteLine("Digite su cédula");
+                                registro.cliente11[2] = Console.ReadLine();
+                                Console.WriteLine("Digite su dirección email");
+                                registro.cliente11[3] = Console.ReadLine();
+
+                                factura.getFacturaSiNo();
+                           
                             
 
                             break;//detiene el ciclo
