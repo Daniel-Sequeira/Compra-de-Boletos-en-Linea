@@ -13,15 +13,11 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
 
         public void getMenu()
         {
-
-            horarios.getHorariosFerry(); //Muestra los horarios almacenados en arreglo horarios
             bool continua = true;
             int opcion;
-            
-
+         
             do//ejecuta el siguiente código la primera vez
             {
-
                 Console.WriteLine("Elige tu horario con los números 1,2,3,4 o 5 para salir");//Titulo en pantalla que verá el usuario
                 string numero = Console.ReadLine(); //almacena la opción selecionada por usuario que será validada en adelante.
 
@@ -33,25 +29,24 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
                             Console.Clear();//limpia la pantalla de datos 
                             Console.WriteLine("***Registro de Clientes***");
                             getRegistroCliente();//Llama al metodo de registro clientes
-
-
-
                             break;//detiene el ciclo
+
                         case (2)://si usuario selecciona opcion 2 realizará
                             Console.Clear();
                             Console.WriteLine("***Registro de Clientes***");
-
                             break;
+
                         case (3)://si usuario selecciona opcion 3 realizará
                             Console.Clear();
                             Console.WriteLine("***Registro de Clientes***");
-
                             break;
+
                         case (4)://si usuario selecciona opcion 4 realizará
                             Console.Clear();
                             Console.WriteLine("***Registro de Clientes***");
 
                             break;
+
                         case (5)://si usuario selecciona opcion 5 realizará
                             continua = false; //cambia el valor a falso entonces while no repite y sale
 
@@ -83,6 +78,7 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
                 usuario.cliente11[2] = Console.ReadLine();
                 Console.WriteLine("Digite su dirección email");
                 usuario.cliente11[3] = Console.ReadLine();
+                Console.ReadKey();
                 
             }
 
