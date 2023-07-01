@@ -6,10 +6,12 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
 {
     public class Datos //Almecena toda la información a consultar.
     {
-        private string[] horario1 = new string[0]; //Declaración de arreglos                                           
-        private string[] horario2 = new string[0];//Horarios
-        private string[] horario3 = new string[0];
-        private string[] horario4 = new string[0];
+       
+
+        private string[] horario1 = new string[12]; //Declaración de arreglos                                           
+        private string[] horario2 = new string[12];//Horarios
+        private string[] horario3 = new string[12];
+        private string[] horario4 = new string[12];
 
         private string[] cliente1 = new string[3];//Clientes
         private string[] cliente2 = new string[3];
@@ -22,8 +24,8 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
         private string[] cliente9 = new string[3];
         private string[] cliente10 = new string[3];
 
-        public string[] cliente11 = new string[4];
-        public string[] cliente12 = new string[4];
+        public string[] cliente11 = new string[3];
+        public string[] cliente12 = new string[3];
 
         private double tarifa;//Datos facturardor
         private double iva;
@@ -127,52 +129,10 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
 
         }
 
-        public void getRegistroC11()
-        {
-
-            int decide;
-            Console.WriteLine("Digite su nombre");
-            cliente11[0] = Console.ReadLine();
-            Console.WriteLine("Digite sus apellidos");
-            cliente11[1] = Console.ReadLine();
-            Console.WriteLine("Digite su cédula");
-            cliente11[2] = Console.ReadLine();
-            Console.WriteLine("Digite su dirección email");
-            cliente11[3] = Console.ReadLine();
-            Console.WriteLine("Facturar digite (1) ///o (2) para Salir");
-            decide = Convert.ToInt32(Console.ReadLine());
-            
-
-        }
-
-        public void RegistroC12()
-        {
-            int decide;
-            Console.WriteLine("Digite su nombre");
-            cliente11[0] = Console.ReadLine();
-            Console.WriteLine("Digite sus apellidos");
-            cliente11[1] = Console.ReadLine();
-            Console.WriteLine("Digite su cédula");
-            cliente11[2] = Console.ReadLine();
-            Console.WriteLine("Digite su dirección email");
-            cliente11[3] = Console.ReadLine();
-            Console.WriteLine("Facturar digite (1) ///o (2) para Salir");
-            decide = Convert.ToInt32(Console.ReadLine());
-            if (decide == 1)
-            {
-                Console.WriteLine("falta crear codigo facturador");
-            }
-            else { }
-
-
-
-        }
-
-
-
+        
+                
+           
 
     }
-
-
 
 }
