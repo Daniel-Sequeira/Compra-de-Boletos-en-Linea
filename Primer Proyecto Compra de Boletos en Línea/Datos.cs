@@ -8,11 +8,12 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
     {
 
         //Estado inicial de arreglo Horarios
-        static int[] horario1 = new int[3];
-        static int[] horario2 = new int[3];
-        static int[] horario3 = new int[3];
-        static int[] horario4 = new int[3];
-        //Clientes
+       
+        public int[] horario1 = new int[3];
+        public int[] horario2 = new int[3];
+        public int[] horario3 = new int[3];
+        public int[] horario4 = new int[3];
+
         string[] cliente1 = new string[4];
         string[] cliente2 = new string[4];
         string[] cliente3 = new string[4];
@@ -27,7 +28,7 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
         public static string[] cliente11 = new string[4];
         //Factura
         public string[] facturaCliente = new string[4];
-        
+
         //declaración variables que componen proceso de facturación
         public int tarifa;
         public double iva;
@@ -35,7 +36,7 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
 
 
 
-        public Datos() //Constructor (Muestra el estado inicial de las variables, si su valor se modifica cambia en todo el programa)
+        public Datos() //(Muestra el estado inicial de las variables, si su valor se modifica cambia en todo el programa)
         {
             string[] cliente1 = { " Roberto ", " Fernandez Esquivel ", " 101110222 ", " rfernandez @hotmail.com " };
             string[] cliente2 = { " Luisa " + " Herrera Perez " + " 202220222 " + " lherrera@gmail.com " };
@@ -48,13 +49,11 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
             string[] cliente9 = { " Silvia " + " Monge Lizano " + " 102220332 " + " smonge@hotmail.com " };
             string[] cliente10 = { " Sthepanie " + " Quesada Rojas " + " 102230333 " + " squesada17@gmail.com " };
 
-
             tarifa = 8000;
             iva = 0.16 * tarifa;
             total = tarifa + iva;
-            
-            
         }
+         
         public void registroCliente()//Metodo que llena el arreglo cliente11, solicitando datos al usuario
         {
 
@@ -96,18 +95,7 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
                 Console.Clear();
             }
         }
-        //Llenado de horarios
-        static Random random = new Random();
-        static void cargaHorarios()
-        {
-            for (int i = 0; i < 3; i++)
-            {
-                horario1[i] = random.Next(0, 11);
-                horario2[i] = random.Next(0, 11);
-                horario3[i] = random.Next(0, 11);
-                horario4[i] = random.Next(0, 11);
-            }
-        }
+        
 
 
 

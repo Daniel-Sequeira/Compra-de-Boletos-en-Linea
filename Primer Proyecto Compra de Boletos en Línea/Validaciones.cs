@@ -8,9 +8,49 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
     {
         
         Datos factura = new Datos(); //Instancia Clase Datos metodo registros
+
+        Datos horarios = new Datos();
+
         
-        
-        public void PreguntaSiNo()//el metodo que valida si el usuario desea facturar, obteniendo datos de facturacion (cliente incluido por teclado)
+        public void validarHorarios()
+        {
+            int[] comparador = {0};
+            Random cualquiera = new Random();
+
+            for (int i = 0; i < horarios.horario1.Length; i++)
+            {
+                horarios.horario1[i] = cualquiera.Next(0, 3);
+
+                for (int j = 0; j < comparador.Length; j++)
+                    if (comparador[j]== horarios.horario1[i])
+                    {
+                        Console.WriteLine("1---09:00h " + " Horario Lleno");
+                    }
+                    else Console.WriteLine("1---09:00h " + " Horario Disponible");
+            }
+
+
+
+
+            //Hacer lo mismo
+
+           /* for (int i = 0; i < horarios.horario2.Length; i++)
+            { 
+                horarios.horario2[i] = cualquiera.Next(0, 2);
+            }
+            for (int i = 0; i < horarios.horario3.Length; i++) 
+            { 
+                horarios.horario3[i] = cualquiera.Next(0, 2); 
+            }
+            for (int i = 0; i < horarios.horario4.Length; i++)
+            {
+                horarios.horario4[i] = cualquiera.Next(0, 2);
+            }*/
+         
+        }
+          
+
+            public void PreguntaSiNo()//el metodo que valida si el usuario desea facturar, obteniendo datos de facturacion (cliente incluido por teclado)
         {
             char elegir;
            
