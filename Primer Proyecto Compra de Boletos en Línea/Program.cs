@@ -39,24 +39,31 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
                             break;//detiene el ciclo
 
                         case (2)://si usuario selecciona opcion 2 realizará
+
                             Console.Clear();
                             Console.WriteLine("***Registro de Clientes***");
+                            registro.registroCliente();
+                            factura.PreguntaSiNo();
                             break;
 
                         case (3)://si usuario selecciona opcion 3 realizará
+
                             Console.Clear();
                             Console.WriteLine("***Registro de Clientes***");
+                            registro.registroCliente();
+                            factura.PreguntaSiNo();
                             break;
 
                         case (4)://si usuario selecciona opcion 4 realizará
+
                             Console.Clear();
                             Console.WriteLine("***Registro de Clientes***");
-
-                            break;
+                            registro.registroCliente();
+                            factura.PreguntaSiNo();
+                             break;
 
                         case (5)://si usuario selecciona opcion 5 realizará
-                            continua = false; //cambia el valor a falso entonces while no repite y sale
-
+                            continua = false; //cambia el valor a falso entonces while no repite y sale del ciclo y finaliza el programa.
                             break;
 
                     }

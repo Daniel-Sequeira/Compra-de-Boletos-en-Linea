@@ -10,26 +10,35 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
         Datos factura = new Datos(); //Instancia Clase Datos metodo registros
         
         
-        public void PreguntaSiNo()
+        public void PreguntaSiNo()//el metodo que valida si el usuario desea facturar, obteniendo datos de facturacion (cliente incluido por teclado)
         {
             char elegir;
+           
             Console.WriteLine("Facturar digite (f) ///o (s) para Salir");
             elegir = Convert.ToChar(Console.ReadLine());
 
-            if (elegir == 'f' || elegir == 'F')
+            if (elegir == 'f' || elegir == 'F') //establece true con f mayuscula o minuscula y ejecuta el código
             {
+                Datos arreglo = new Datos();
                 Console.Clear();
+                Console.WriteLine("/////////Facturación/////////");
+                Console.WriteLine("");
+                arreglo.datosFactura();
+              
+                    
 
-                Console.WriteLine(factura.getFacturas());
             }
-            else if (elegir == 's' || elegir == 'S')
+
+            else if (elegir == 's' || elegir == 'S') //Slida del programa si selecciona s o S
             {
-                Console.WriteLine("No facatura");
+                Console.WriteLine("Falta codigo de salida");
             }
             else
             {
-                Console.WriteLine("Opción inválida, para Facturar digite (f) ///o (s) para Salir");
+
             }
+
+            
         }
     }
 }
