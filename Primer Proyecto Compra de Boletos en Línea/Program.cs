@@ -7,16 +7,22 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
         
         static void Main(string[] args)//Main es lo primero que llama y ejecuta el programa.
         {
-            Console.WriteLine("////// Horarios Ferry Puntarenas---Paquera//////");//Titulo en pantalla que verá el usuario
+            Validaciones horarios = new Validaciones();
+           
 
-            Console.WriteLine("1------09:00 am");
-            Console.WriteLine("2------12:00 pm");
+            Console.WriteLine("////// Horarios Ferry Puntarenas---Paquera//////");//Titulo en pantalla que verá el usuario
+            horarios.validarHorarios();
+          
+
+
+            /*Console.WriteLine("1------09:00 am"); //Horarios que se mostraran al usuario como opciones.
+            Console.WriteLine("2------12:00 pm");//comentariado para probara validacion horarios si funciona borrar
             Console.WriteLine("3------15:00 pm");
             Console.WriteLine("4------20:00 pm");
-            Console.WriteLine("5------Salir");
+            Console.WriteLine("5------Salir");*/
             
-            bool continua = true;
-            int opcion;
+            bool continua = true;// variable que mientras no cambie su valor se repite ciclo while/ cambia cuando el usuario selecciona 5 salir
+            int opcion; //variable que almacena la selección del usuario en el menu (switch)
 
             do//ejecuta el siguiente código la primera vez
             {
@@ -25,52 +31,45 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
 
                 if (int.TryParse(numero, out opcion)) //valida si es verdadero que el usuario digitó 1,2,3,4 o 5, de lo contrario Else.
                 {
-                    Validaciones factura = new Validaciones();
-                    Datos registro = new Datos();
+                    Validaciones factura = new Validaciones();//Instancia que permite llamar metodos de la clase validaciones
+                    Datos registro = new Datos();//Instancia que permite llamar metodos de la clase Datos
                     switch (opcion) //Realiza acciones de acuerdo a selección de usuario
                     {
                         
                         case (1)://si usurio selecciona opcion 1 realizará
-                            
-                            
-                            
-                                Console.Clear();//limpia la pantalla de datos                         
-                                                //registro.getRegistroCliente();//Llama al metodo de registro clientes
-                                Console.WriteLine("***Registro de Clientes***");
-                                Console.WriteLine("Digite su nombre");
-                                registro.cliente11[0] = Console.ReadLine();
-                                Console.WriteLine("Digite sus apellidos");
-                                registro.cliente11[1] = Console.ReadLine();
-                                Console.WriteLine("Digite su cédula");
-                                registro.cliente11[2] = Console.ReadLine();
-                                Console.WriteLine("Digite su dirección email");
-                                registro.cliente11[3] = Console.ReadLine();
-
-                                factura.getFacturaSiNo();
-                           
-                            
-
+                    
+                           Console.Clear();//limpia la pantalla de datos                         
+                            Console.WriteLine("***Registro de Clientes***");//Muestra este titulo
+                             registro.registroCliente();//llama el metodo que llena el arreglo cliente11
+                             factura.PreguntaSiNo();//llama el metodo que pregunta si desea facturar
                             break;//detiene el ciclo
 
-                        case (2)://si usuario selecciona opcion 2 realizará
+                        case (2)://si usuario selecciona opcion 2 realizará (explicación igual que opción 1 diferente horario)
+
                             Console.Clear();
                             Console.WriteLine("***Registro de Clientes***");
+                            registro.registroCliente();
+                            factura.PreguntaSiNo();
                             break;
 
                         case (3)://si usuario selecciona opcion 3 realizará
+
                             Console.Clear();
                             Console.WriteLine("***Registro de Clientes***");
+                            registro.registroCliente();
+                            factura.PreguntaSiNo();
                             break;
 
                         case (4)://si usuario selecciona opcion 4 realizará
+
                             Console.Clear();
                             Console.WriteLine("***Registro de Clientes***");
-
-                            break;
+                            registro.registroCliente();
+                            factura.PreguntaSiNo();
+                             break;
 
                         case (5)://si usuario selecciona opcion 5 realizará
-                            continua = false; //cambia el valor a falso entonces while no repite y sale
-
+                            continua = false; //cambia el valor a falso entonces while no repite y sale del ciclo y finaliza el programa.
                             break;
 
                     }
