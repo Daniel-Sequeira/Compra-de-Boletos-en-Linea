@@ -5,7 +5,7 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
     class Program
     {
         
-        static void Main(string[] args)//Main es lo primero que llama y ejecuta el programa.
+        static void Main(string[] args)//Main es lo primero que llama y ejecuta el prog
         {
             Validaciones horarios = new Validaciones();
            
