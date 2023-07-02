@@ -31,15 +31,16 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
 
             else if (elegir == 's' || elegir == 'S') //Slida del programa si selecciona s o S
             {
-                Console.WriteLine("Falta codigo de salida");
+                Console.WriteLine("Gracias vuelva pronto");
             }
             else
             {
-
+                Console.WriteLine("Opción incorrecta");
             }
 
             
         }
+       
     }
 }
 
