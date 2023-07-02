@@ -14,7 +14,7 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
         
         public void validarHorarios()
         {
-            int[] comparador = {0};
+            int[] comparador = {1,0,1};
             Random cualquiera = new Random();
 
             for (int i = 0; i < horarios.horario1.Length; i++)
@@ -32,7 +32,7 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
 
 
 
-            //Hacer lo mismo
+            //Hacer lo mismo para cada horario
 
            /* for (int i = 0; i < horarios.horario2.Length; i++)
             { 
