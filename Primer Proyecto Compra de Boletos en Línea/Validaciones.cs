@@ -137,18 +137,13 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
             if (imprime == "g" || imprime == "G")
             {
                 Console.Clear();
-                for (int i = 0; i <arreglofac.facturaCliente.Length; i++)
+                for (int i = 0; i < arreglofac.facturaCliente.Length; i++)
                 {
                     arreglofac.facturaCliente[0] = "1";
-                    arreglofac.facturaCliente[1] = arregloclient.cliente11[1]+arregloclient.cliente11[2];
-                    arreglofac.facturaCliente[2] = factura.fecha;
-                    arreglofac.facturaCliente[3] = Convert.ToString(factura.total);
-                    foreach (string mostrar in arregloclient.cliente1)
-                    {
-                        Console.WriteLine("Todos los que viajan Puntarenas---Paquera");
-                        Console.WriteLine(mostrar);
-                    }
-                }         
+                    arreglofac.facturaCliente[1] = arregloclient.cliente11[1] + arregloclient.cliente11[2];
+                    arreglofac.facturaCliente[2] = arreglofac.fecha;
+                    arreglofac.facturaCliente[3] = Convert.ToString(arreglofac.total);
+                }
                 
             }
             else if (imprime == "s" || imprime == "S")
