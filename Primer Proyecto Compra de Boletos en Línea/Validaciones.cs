@@ -1,26 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
 {
     class Validaciones
     {
-        
-        
-
         Datos horarios = new Datos();
 
-        
+
+
         public void ValidarHorarios()
         {
-            int[] comparador = {1,0,1};
+            int[] comparador = { 1, 0, 1 };
             Random cualquiera = new Random();
             bool horarioNodisponible = false;
 
             for (int i = 0; i < horarios.horario1.Length; i++)
             {
-                horarios.horario1[i] = cualquiera.Next(0, 4);
+                horarios.horario1[i] = cualquiera.Next(0, 3);
 
                 for (int j = 0; j < comparador.Length; j++)
                 {
@@ -38,7 +34,7 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
 
             bool horarioNodisponible2 = false;
             for (int i = 0; i < horarios.horario2.Length; i++)
-            { 
+            {
                 horarios.horario2[i] = cualquiera.Next(0, 2);
                 for (int j = 0; j < comparador.Length; j++)
                 {
@@ -55,8 +51,8 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
             }
 
             bool horarioNodisponible3 = false;
-            for (int i = 0; i < horarios.horario3.Length; i++) 
-            { 
+            for (int i = 0; i < horarios.horario3.Length; i++)
+            {
                 horarios.horario3[i] = cualquiera.Next(0, 2);
                 for (int j = 0; j < comparador.Length; j++)
                 {
@@ -94,13 +90,12 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
 
         }
 
-          
 
-          public void PreguntaSiNo()//el metodo que valida si el usuario desea facturar, obteniendo datos de facturacion (cliente incluido por teclado)
+        public void PreguntaSiNo()//el metodo que valida si el usuario desea facturar, obteniendo datos de facturacion (cliente incluido por teclado)
 
-          {
+        {
             char elegir;
-           
+
             Console.WriteLine("Facturar digite (f) ///o (s) para Salir");
             elegir = Convert.ToChar(Console.ReadLine());
 
@@ -111,8 +106,8 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
                 Console.WriteLine("/////////Facturación/////////");
                 Console.WriteLine("");
                 arreglo.DatosFactura();
-              
-                    
+
+
 
             }
 
@@ -125,34 +120,9 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
                 Console.WriteLine("Opción incorrecta");
             }
 
-            
-            }
-        public void GuardaFactura()
-        {
-            Datos arreglofac = new Datos();
-            Datos arregloclient = new Datos();
-            Console.WriteLine("");
-            Console.WriteLine("Imprimir Factura? Si(g)//Salir(s)"); //Mostrará todos los clientes que viaja incluyendo el que ingresamos por teclado
-             string imprime = Console.ReadLine();
-            if (imprime == "g" || imprime == "G")
-            {
-                Console.Clear();
-                for (int i = 0; i < arreglofac.facturaCliente.Length; i++)
-                {
-                    arreglofac.facturaCliente[0] = "1";
-                    arreglofac.facturaCliente[1] = arregloclient.cliente11[1] + arregloclient.cliente11[2];
-                    arreglofac.facturaCliente[2] = arreglofac.fecha;
-                    arreglofac.facturaCliente[3] = Convert.ToString(arreglofac.total);
-                }
-                
-            }
-            else if (imprime == "s" || imprime == "S")
-            {
-                
-            }
-
 
         }
+        
 
 
     }

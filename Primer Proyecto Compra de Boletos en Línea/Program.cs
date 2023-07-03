@@ -8,8 +8,9 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
         static void Main(string[]args)//Main es lo primero que llama y ejecuta el programa.
         {
             Validaciones horarios = new Validaciones();
+            Datos registro = new Datos();//Instancia que permite llamar metodos de la clase Datos
 
-           
+
 
             Console.WriteLine("////// Horarios Ferry Puntarenas---Paquera//////");//Titulo en pantalla que verá el usuario
             horarios.ValidarHorarios();
@@ -24,8 +25,8 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
 
                 if (int.TryParse(numero, out opcion)) //valida si es verdadero que el usuario digitó 1,2,3,4 o 5, de lo contrario Else.
                 {
-                    Validaciones factura = new Validaciones();//Instancia que permite llamar metodos de la clase validaciones
-                    Datos registro = new Datos();//Instancia que permite llamar metodos de la clase Datos
+                    
+                    
                     switch (opcion) //Realiza acciones de acuerdo a selección de usuario
                     {
                         
@@ -33,8 +34,8 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
                     
                            Console.Clear();//limpia la pantalla de datos                         
                             Console.WriteLine("***Registro de Clientes***");//Muestra este titulo
-                            registro.RegistroCliente();//llama el metodo que llena el arreglo cliente11
-                             factura.PreguntaSiNo();//llama el metodo que pregunta si desea facturar
+                             registro.RegistroCliente();//llama el metodo que llena el arreglo cliente11
+                           
                             break;//detiene el ciclo
 
                         case (2)://si usuario selecciona opcion 2 realizará (explicación igual que opción 1 diferente horario)
@@ -42,7 +43,7 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
                             Console.Clear();
                             Console.WriteLine("***Registro de Clientes***");
                             registro.RegistroCliente();
-                            factura.PreguntaSiNo();
+                           
                             break;
 
                         case (3)://si usuario selecciona opcion 3 realizará
@@ -50,7 +51,7 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
                             Console.Clear();
                             Console.WriteLine("***Registro de Clientes***");
                             registro.RegistroCliente();
-                            factura.PreguntaSiNo();
+                           
                             break;
 
                         case (4)://si usuario selecciona opcion 4 realizará
@@ -58,11 +59,12 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
                             Console.Clear();
                             Console.WriteLine("***Registro de Clientes***");
                             registro.RegistroCliente();
-                            factura.PreguntaSiNo();
+                           
                              break;
 
                         case (5)://si usuario selecciona opcion 5 realizará
                             continua = false; //cambia el valor a falso entonces while no repite y sale del ciclo y finaliza el programa.
+                            Console.WriteLine("Hasta Luego");
                             break;
 
                     }
