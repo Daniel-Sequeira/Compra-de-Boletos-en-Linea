@@ -26,9 +26,8 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
         public string[] cliente9 = { " Silvia " + " Monge Lizano " + " 102220332 " + " smonge@hotmail.com " };
         public string[] cliente10 = { " Sthepanie " + " Quesada Rojas " + " 102230333 " + " squesada17@gmail.com " };
 
-        public string[] cliente11;
-
-        public string[] facturaCliente;
+        public string[] cliente11 = new string[4];
+        public string[] facturaCliente = new string[4];
 
         public int tarifa;
         public double iva;
@@ -36,13 +35,7 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
         public string fecha;
 
         public void Infor()
-        {
-            
-
-            string[] facturaCliente = new string[4];
-
-            string[] cliente11 = new string[4];
-
+        { 
           
             fecha = DateTime.UtcNow.ToString("dd-MMM-yyyy");//Esatable fecha sin hora del sistema
             tarifa = 8000;
