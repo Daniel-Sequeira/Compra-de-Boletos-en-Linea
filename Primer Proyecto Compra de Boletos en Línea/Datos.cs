@@ -61,24 +61,40 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
             do
             {
                 cliente11[0] = Console.ReadLine();
+                if (string.IsNullOrEmpty(cliente11[0]))
+                {
+                    Console.WriteLine("Este campo no puede estar vacío. Por favor, intente nuevamente.");
+                }
             }
             while (string.IsNullOrEmpty(cliente11[0]));
             Console.WriteLine("Digite sus apellidos");
             do
             {
                 cliente11[1] = Console.ReadLine();
+                if (string.IsNullOrEmpty(cliente11[1]))
+                {
+                    Console.WriteLine("Este campo no puede estar vacío. Por favor, intente nuevamente.");
+                }
             }
             while (string.IsNullOrEmpty(cliente11[1]));
             Console.WriteLine("Digite su cedula");
             do
             {
                 cliente11[2] = Console.ReadLine();
+                if (string.IsNullOrEmpty(cliente11[2]))
+                {
+                    Console.WriteLine("Este campo no puede estar vacío. Por favor, intente nuevamente.");
+                }
             }
             while (string.IsNullOrEmpty(cliente11[2]));
             Console.WriteLine("Digite su correo electronico");
             do
             {
                 cliente11[3] = Console.ReadLine();
+                if (string.IsNullOrEmpty(cliente11[3]))
+                {
+                    Console.WriteLine("Este campo no puede estar vacío. Por favor, intente nuevamente.");
+                }
             }
             while (string.IsNullOrEmpty(cliente11[3]));
 
