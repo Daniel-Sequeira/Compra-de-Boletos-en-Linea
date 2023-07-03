@@ -16,17 +16,24 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
         {
             int[] comparador = {1,0,1};
             Random cualquiera = new Random();
+            bool horarioNodisponible = false;
 
             for (int i = 0; i < horarios.horario1.Length; i++)
             {
                 horarios.horario1[i] = cualquiera.Next(0, 3);
 
                 for (int j = 0; j < comparador.Length; j++)
-                    if (comparador[j]== horarios.horario1[i])
+                {
+                    if (comparador[j] == horarios.horario1[i] && !horarioNodisponible)
                     {
                         Console.WriteLine("1---09:00h " + " Horario Lleno");
+                        horarioNodisponible = true;
                     }
-                    else Console.WriteLine("1---09:00h " + " Horario Disponible");
+                }
+            }
+            if (!horarioNodisponible)
+            {
+                Console.WriteLine("1---09:00h " + "Horario Dispoible");
             }
 
 
