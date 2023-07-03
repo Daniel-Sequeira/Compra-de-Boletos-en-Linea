@@ -29,38 +29,34 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
         private string[] cliente11 = new string[4];
         public string[] facturaCliente = new string[4];
 
-        public double tarifa;
-        public double iva;
-        public double total;
-        public string fecha;
+        private double tarifa;
+        private double iva;
+        private double total;
+        private string fecha;
 
         public string Fecha()
         {
             return fecha = DateTime.UtcNow.ToString("dd-MMM-yyyy");//Esatable fecha sin hora del sistema
         }
-        public double Tarifa(double tarifa)
+        public double Tarifa()
         {
             return tarifa = 8000;
         }
-        public double Impuesto(double tarifa)
+        public double Impuesto()
         {
            return iva = 0.16 * tarifa;
         }
-        public double Total(double tarifa, double iva)
+        public double Total()
         {
-         return total = tarifa + iva;
+         return  total =  (tarifa +  iva);
         }
 
-        public string[] Cliente11(string[]cliente11)
-        {
-            return cliente11;
-        }
 
 
             
         public void RegistroCliente()//Metodo que llena el arreglo cliente11, solicitando y validando datos al usuario
         {
-            string decide= null;
+            
          
             Console.WriteLine("Digite su nombre");
             cliente11[0] = Console.ReadLine();
@@ -70,14 +66,27 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
             cliente11[2] = Console.ReadLine();
             Console.WriteLine("Digite su correo electronico");
             cliente11[3] = Console.ReadLine();
-            Console.WriteLine("Desea Facturar SI(f)----NO(s)");
-            if (decide == "f" || decide == "F")
+            string decide;
+            do
             {
-                DatosFactura();
-            }
-            if (decide == "s" || decide == "S")
-            {
-                Console.WriteLine("Hasta Luego");
+                Console.Clear();
+                Console.WriteLine("Desea Facturar SI(f)----NO(s)");
+                decide = Console.ReadLine();
+
+                if (decide == "f" || decide == "F")
+                {
+                    DatosFactura();
+                }
+                if (decide == "s" || decide == "F")
+                {
+                    Console.WriteLine("Hasta Luego");
+                    break;
+                }
+                
+            } while (decide != "f" || decide != "F");
+
+    {
+
             }
 
         }
@@ -87,27 +96,19 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
             char imprime;
             string[] tabla = { "Cantidad", "Descripción", "Fecha", "Pago" };
             Console.WriteLine($"{tabla[0],10} {tabla[1],8} {tabla[2],12} {tabla[3],10}");//Un pequeño arreglo que da orden a la tabla informativa
-            Console.WriteLine($" 1           {cliente11[0],10}  {fecha,10}  {tarifa}");
+            Console.WriteLine($"  1          {cliente11[0],10}  {Fecha(),10}  {Tarifa():C}");
+            Console.WriteLine($"            {cliente11[1],10}");
             Console.WriteLine("");
             Console.WriteLine("");
             Console.WriteLine("");
             Console.WriteLine("");
-            Console.WriteLine("");
-            Console.WriteLine($"Subtotal  {tarifa:c}");//la sintaxis variable:c se refiere al formato de moneda (toma el del sistema)
-            Console.WriteLine($"Impuesto   {iva:c}");
-            Console.WriteLine($"Total     {total:c}");
+            Console.WriteLine($"Subtotal  {Tarifa():C}");//la sintaxis variable:c se refiere al formato de moneda (toma el del sistema)
+            Console.WriteLine($"Impuesto   {Impuesto():c}");
+            Console.WriteLine($"Total     {Total():c}");
             Console.WriteLine("");
             Console.WriteLine("Imprimir Factura? Si(g)//Salir(s)"); //Mostrará todos los clientes que viaja incluyendo el que ingresamos por teclado
             imprime = Convert.ToChar(Console.ReadLine());
-                if (imprime == 'g' || imprime == 'G')
-                {
-                    Console.Clear();
-                }
-                else if (imprime == 's' || imprime == 'S')
-                {
-                    Console.Clear();
-
-                }
+             
          
                    
           }
