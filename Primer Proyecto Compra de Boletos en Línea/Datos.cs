@@ -91,7 +91,7 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
                     Console.WriteLine("Formato invalido, asegurese de escribir un formato valido ejemplo ---> (202220222)");
                 }
             }
-            while (string.IsNullOrEmpty(cliente11[2]) || !ValidarEmail(cliente11[2]));
+            while (string.IsNullOrEmpty(cliente11[2]) || !validarCedula(cliente11[2]));
             Console.WriteLine("Digite su correo electronico");
             do   
             {
@@ -110,7 +110,7 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
 
             bool validarCedula(string cedula) //Se utiliza la funcion ValidarCedula para verificar que el formato del correo sea el indicado
             {
-                string formato = @"^\{9}$"; 
+                string formato = @"^\d{9}$"; 
                 return Regex.IsMatch(cedula, formato);
             }
             bool ValidarEmail(string email) //Se utiliza la funcion ValidarEmail para verificar que el formato del correo sea el indicado
