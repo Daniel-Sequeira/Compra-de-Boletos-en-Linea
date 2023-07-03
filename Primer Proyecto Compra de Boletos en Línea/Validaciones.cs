@@ -1,13 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
 {
     class Validaciones
     {
-        
         Datos horarios = new Datos();
+
 
 
         public void ValidarHorarios()
@@ -93,11 +91,11 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
         }
 
 
-          public void PreguntaSiNo()//el metodo que valida si el usuario desea facturar, obteniendo datos de facturacion (cliente incluido por teclado)
+        public void PreguntaSiNo()//el metodo que valida si el usuario desea facturar, obteniendo datos de facturacion (cliente incluido por teclado)
 
-          {
+        {
             char elegir;
-           
+
             Console.WriteLine("Facturar digite (f) ///o (s) para Salir");
             elegir = Convert.ToChar(Console.ReadLine());
 
@@ -108,8 +106,8 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
                 Console.WriteLine("/////////Facturación/////////");
                 Console.WriteLine("");
                 arreglo.DatosFactura();
-              
-                    
+
+
 
             }
 
@@ -122,15 +120,15 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
                 Console.WriteLine("Opción incorrecta");
             }
 
-            
-            }
+
+        }
         public void GuardaFactura()
         {
             Datos arreglofac = new Datos();
             Datos arregloclient = new Datos();
             Console.WriteLine("");
             Console.WriteLine("Imprimir Factura? Si(g)//Salir(s)"); //Mostrará todos los clientes que viaja incluyendo el que ingresamos por teclado
-             string imprime = Console.ReadLine();
+            string imprime = Console.ReadLine();
             if (imprime == "g" || imprime == "G")
             {
                 Console.Clear();
@@ -141,11 +139,11 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
                     arreglofac.facturaCliente[2] = arreglofac.fecha;
                     arreglofac.facturaCliente[3] = Convert.ToString(arreglofac.total);
                 }
-                
+
             }
             else if (imprime == "s" || imprime == "S")
             {
-                
+
             }
 
 

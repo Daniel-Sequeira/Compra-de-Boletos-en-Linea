@@ -10,11 +10,10 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
 
 
         //Estado inicial de arreglo Horarios
-
-        public int[] horario1;
-        public int[] horario2;
-        public int[] horario3;
-        public int[] horario4;
+        public int[] horario1 = new int[3];
+        public int[] horario2 = new int[3];
+        public int[] horario3 = new int[3];
+        public int[] horario4 = new int[3];
 
         public string[] cliente1 = { " Roberto ", " Fernandez Esquivel ", " 101110222 ", " rfernandez @hotmail.com " };
         public string[] cliente2 = { " Luisa " + " Herrera Perez " + " 202220222 " + " lherrera@gmail.com " };
@@ -38,10 +37,7 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
 
         public void Infor()
         {
-            int[] horario1 = new int[3];
-            int[] horario2 = new int[3];
-            int[] horario3 = new int[3];
-            int[] horario4 = new int[3];
+            
 
             string[] facturaCliente = new string[4];
 
@@ -54,44 +50,18 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
             total = tarifa + iva;
         }
          
-        public void registroCliente()//Metodo que llena el arreglo cliente11, solicitando y validando datos al usuario
+        public void RegistroCliente()//Metodo que llena el arreglo cliente11, solicitando y validando datos al usuario
         {
 
             Console.WriteLine("Digite su nombre");
             cliente11[0] = Console.ReadLine();
             Console.WriteLine("Digite sus apellidos");
-            do
-            {
-                cliente11[1] = Console.ReadLine();
-                if (string.IsNullOrEmpty(cliente11[1]))
-                {
-                    Console.WriteLine("Este campo no puede estar vacío. Por favor, intente nuevamente.");
-                }
-            }
-            while (string.IsNullOrEmpty(cliente11[1]));
+            cliente11[1] = Console.ReadLine();  
             Console.WriteLine("Digite su cedula");
             cliente11[2] = Console.ReadLine();
             Console.WriteLine("Digite su correo electronico");
-            do   
-            {
-                cliente11[3] = Console.ReadLine();
-                if (string.IsNullOrEmpty(cliente11[3]))
-                {
-                    Console.WriteLine("Este campo no puede estar vacío. Por favor, intente nuevamente.");
-                } 
-                else if (!IsvalidEmail(cliente11[3]))
-                { 
-                
-                    Console.WriteLine("Formato de correo electronico incorrecto");
-                }
-            }
-            while (string.IsNullOrEmpty(cliente11[3]) || !IsvalidEmail(cliente11[3]));
-            bool IsvalidEmail(string email) //Se utiliza la funcion IsValidEmail para verificar que el formato del correo sea el indicado
-            {
-                string pattern = @"^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$";
-                return Regex.IsMatch(email, pattern);
-            }
-        
+            cliente11[3] = Console.ReadLine();
+      
         }
 
           public void DatosFactura()//Metodo que obtiene datos realiza impresión informativa al usuario y pregunta si desea imprimir factura
