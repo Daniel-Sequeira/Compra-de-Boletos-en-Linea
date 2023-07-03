@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
 {
@@ -54,14 +55,14 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
             total = tarifa + iva;
         }
          
-        public void registroCliente()//Metodo que llena el arreglo cliente11, solicitando datos al usuario
+        public void registroCliente()//Metodo que llena el arreglo cliente11, solicitando y validando datos al usuario
         {
             string[] cliente11 = new string[4];
             Console.WriteLine("Digite su nombre");
-            do
+            do //Utilizamos ciclo Do While para que el programa avance hasta que se ingrese un dato valido.
             {
                 cliente11[0] = Console.ReadLine();
-                if (string.IsNullOrEmpty(cliente11[0]))
+                if (string.IsNullOrEmpty(cliente11[0])) //En esta funcion verificamos que el campo no se encuentre vacio
                 {
                     Console.WriteLine("Este campo no puede estar vacío. Por favor, intente nuevamente.");
                 }
@@ -88,16 +89,25 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
             }
             while (string.IsNullOrEmpty(cliente11[2]));
             Console.WriteLine("Digite su correo electronico");
-            do
+            do   
             {
                 cliente11[3] = Console.ReadLine();
                 if (string.IsNullOrEmpty(cliente11[3]))
                 {
                     Console.WriteLine("Este campo no puede estar vacío. Por favor, intente nuevamente.");
+                } 
+                else if (!IsvalidEmail(cliente11[3]))
+                { 
+                
+                    Console.WriteLine("Formato de correo electronico incorrecto");
                 }
             }
-            while (string.IsNullOrEmpty(cliente11[3]));
-
+            while (string.IsNullOrEmpty(cliente11[3]) || !IsvalidEmail(cliente11[3]));
+            bool IsvalidEmail(string email) //Se utiliza la funcion IsValidEmail para verificar que el formato del correo sea el indicado
+            {
+                string pattern = @"^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$";
+                return Regex.IsMatch(email, pattern);
+            }
         
         }
 
