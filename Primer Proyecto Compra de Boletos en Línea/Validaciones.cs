@@ -7,20 +7,18 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
     class Validaciones
     {
         
-        
-
         Datos horarios = new Datos();
 
-        
+
         public void ValidarHorarios()
         {
-            int[] comparador = {1,0,1};
+            int[] comparador = { 1, 0, 1 };
             Random cualquiera = new Random();
             bool horarioNodisponible = false;
 
             for (int i = 0; i < horarios.horario1.Length; i++)
             {
-                horarios.horario1[i] = cualquiera.Next(0, 4);
+                horarios.horario1[i] = cualquiera.Next(0, 3);
 
                 for (int j = 0; j < comparador.Length; j++)
                 {
@@ -38,7 +36,7 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
 
             bool horarioNodisponible2 = false;
             for (int i = 0; i < horarios.horario2.Length; i++)
-            { 
+            {
                 horarios.horario2[i] = cualquiera.Next(0, 2);
                 for (int j = 0; j < comparador.Length; j++)
                 {
@@ -55,8 +53,8 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
             }
 
             bool horarioNodisponible3 = false;
-            for (int i = 0; i < horarios.horario3.Length; i++) 
-            { 
+            for (int i = 0; i < horarios.horario3.Length; i++)
+            {
                 horarios.horario3[i] = cualquiera.Next(0, 2);
                 for (int j = 0; j < comparador.Length; j++)
                 {
@@ -94,7 +92,6 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
 
         }
 
-          
 
           public void PreguntaSiNo()//el metodo que valida si el usuario desea facturar, obteniendo datos de facturacion (cliente incluido por teclado)
 

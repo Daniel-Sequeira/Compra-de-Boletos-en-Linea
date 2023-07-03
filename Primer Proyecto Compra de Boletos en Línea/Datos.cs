@@ -50,43 +50,48 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
           
             fecha = DateTime.UtcNow.ToString("dd-MMM-yyyy");//Esatable fecha sin hora del sistema
             tarifa = 8000;
-           iva = 0.16 * tarifa;
-           total = tarifa + iva;
-           fecha = DateTime.UtcNow.ToString("dd-MMM-yyyy");
-
-
+            iva = 0.16 * tarifa;
+            total = tarifa + iva;
         }
+         
         public void registroCliente()//Metodo que llena el arreglo cliente11, solicitando y validando datos al usuario
         {
 
             Console.WriteLine("Digite su nombre");
             cliente11[0] = Console.ReadLine();
             Console.WriteLine("Digite sus apellidos");
-            cliente11[1] = Console.ReadLine();
+            do
+            {
+                cliente11[1] = Console.ReadLine();
+                if (string.IsNullOrEmpty(cliente11[1]))
+                {
+                    Console.WriteLine("Este campo no puede estar vacío. Por favor, intente nuevamente.");
+                }
+            }
+            while (string.IsNullOrEmpty(cliente11[1]));
             Console.WriteLine("Digite su cedula");
             cliente11[2] = Console.ReadLine();
             Console.WriteLine("Digite su correo electronico");
-            cliente11[3] = Console.ReadLine();
-        }
-
-        public void datosFactura()//Metodo que obtiene datos realiza impresión informativa al usuario y pregunta si desea imprimir factura
-        {
-
-            //Esatable fecha sin hora del sistema
-            string[] tabla = { "Cantidad", "Descripción", "Fecha", "Pago" };
-            Console.WriteLine($"{tabla[0],10} {tabla[1],8} {tabla[2],12} {tabla[3],10}");//Un pequeño arreglo que da orden a la tabla informativa.
-            Console.WriteLine($"   1         {cliente11[0],8}     {fecha,5}   {tarifa:c}");
-            Console.WriteLine($"           { cliente11[1],5}");
-            Console.WriteLine("");
-            Console.WriteLine("");
-            Console.WriteLine("");
-            Console.WriteLine("");
-            Console.WriteLine("");
-            Console.WriteLine($"Subtotal  {tarifa:c}");//la sintaxis variable:c se refiere al formato de moneda (toma el del sistema)
-            Console.WriteLine($"Impuesto   {iva:c}");
-            Console.WriteLine($"Total     {total:c}");
-            Console.WriteLine("");
-
+            do   
+            {
+                cliente11[3] = Console.ReadLine();
+                if (string.IsNullOrEmpty(cliente11[3]))
+                {
+                    Console.WriteLine("Este campo no puede estar vacío. Por favor, intente nuevamente.");
+                } 
+                else if (!IsvalidEmail(cliente11[3]))
+                { 
+                
+                    Console.WriteLine("Formato de correo electronico incorrecto");
+                }
+            }
+            while (string.IsNullOrEmpty(cliente11[3]) || !IsvalidEmail(cliente11[3]));
+            bool IsvalidEmail(string email) //Se utiliza la funcion IsValidEmail para verificar que el formato del correo sea el indicado
+            {
+                string pattern = @"^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$";
+                return Regex.IsMatch(email, pattern);
+            }
+        
         }
 
           public void DatosFactura()//Metodo que obtiene datos realiza impresión informativa al usuario y pregunta si desea imprimir factura
