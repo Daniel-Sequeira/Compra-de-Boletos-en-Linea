@@ -56,15 +56,49 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
          
         public void registroCliente()//Metodo que llena el arreglo cliente11, solicitando datos al usuario
         {
-
+            string[] cliente11 = new string[4];
             Console.WriteLine("Digite su nombre");
-            cliente11[0] = Console.ReadLine();
+            do
+            {
+                cliente11[0] = Console.ReadLine();
+                if (string.IsNullOrEmpty(cliente11[0]))
+                {
+                    Console.WriteLine("Este campo no puede estar vacío. Por favor, intente nuevamente.");
+                }
+            }
+            while (string.IsNullOrEmpty(cliente11[0]));
             Console.WriteLine("Digite sus apellidos");
-            cliente11[1] = Console.ReadLine();
-            Console.WriteLine("Digite su cédula");
-            cliente11[2] = Console.ReadLine();
-            Console.WriteLine("Digite su dirección email");
-            cliente11[3] = Console.ReadLine();
+            do
+            {
+                cliente11[1] = Console.ReadLine();
+                if (string.IsNullOrEmpty(cliente11[1]))
+                {
+                    Console.WriteLine("Este campo no puede estar vacío. Por favor, intente nuevamente.");
+                }
+            }
+            while (string.IsNullOrEmpty(cliente11[1]));
+            Console.WriteLine("Digite su cedula");
+            do
+            {
+                cliente11[2] = Console.ReadLine();
+                if (string.IsNullOrEmpty(cliente11[2]))
+                {
+                    Console.WriteLine("Este campo no puede estar vacío. Por favor, intente nuevamente.");
+                }
+            }
+            while (string.IsNullOrEmpty(cliente11[2]));
+            Console.WriteLine("Digite su correo electronico");
+            do
+            {
+                cliente11[3] = Console.ReadLine();
+                if (string.IsNullOrEmpty(cliente11[3]))
+                {
+                    Console.WriteLine("Este campo no puede estar vacío. Por favor, intente nuevamente.");
+                }
+            }
+            while (string.IsNullOrEmpty(cliente11[3]));
+
+        
         }
 
         public void datosFactura()//Metodo que obtiene datos realiza impresión informativa al usuario y pregunta si desea imprimir factura
