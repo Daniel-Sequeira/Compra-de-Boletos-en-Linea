@@ -9,31 +9,27 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
     {
 
         //Estado inicial de arreglo Horarios
-       
+
         public int[] horario1 = new int[3];
         public int[] horario2 = new int[3];
         public int[] horario3 = new int[3];
         public int[] horario4 = new int[3];
+        //Cliente
+        public string[] cliente11 = new string[4];
 
-        string[] cliente1 = new string[4];
-        string[] cliente2 = new string[4];
-        string[] cliente3 = new string[4];
-        string[] cliente4 = new string[4];
-        string[] cliente5 = new string[4];
-        string[] cliente6 = new string[4];
-        string[] cliente7 = new string[4];
-        string[] cliente8 = new string[4];
-        string[] cliente9 = new string[4];
-        string[] cliente10 = new string[4];
 
-        public static string[] cliente11 = new string[4];
+
+
+
         //Factura
         public string[] facturaCliente = new string[4];
+        
 
         //declaración variables que componen proceso de facturación
         public int tarifa;
         public double iva;
         public double total;
+        public string fecha;
 
 
 
@@ -49,16 +45,19 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
             string[] cliente8 = { " Carolina " + " Arias Segura " + " 102210331 " + " carias@outlook.com " };
             string[] cliente9 = { " Silvia " + " Monge Lizano " + " 102220332 " + " smonge@hotmail.com " };
             string[] cliente10 = { " Sthepanie " + " Quesada Rojas " + " 102230333 " + " squesada17@gmail.com " };
+            
 
+            string[] facturaCliente = {$"  1   {cliente11[0]} {cliente11[1]}  {fecha}  {tarifa} "};
+            fecha = DateTime.UtcNow.ToString("dd-MMM-yyyy");//Esatable fecha sin hora del sistema
             tarifa = 8000;
             iva = 0.16 * tarifa;
             total = tarifa + iva;
         }
-         
-        public void registroCliente()//Metodo que llena el arreglo cliente11, solicitando y validando datos al usuario
+
+        public void RegistroCliente()//Metodo que llena el arreglo cliente11, solicitando y validando datos al usuario
         {
-            string[] cliente11 = new string[4];
-            Console.WriteLine("Digite su nombre");
+             string[] cliente11 = new string[4];
+       Console.WriteLine("Digite su nombre");
             do //Utilizamos ciclo Do While para que el programa avance hasta que se ingrese un dato valido.
             {
                 cliente11[0] = Console.ReadLine();
@@ -93,16 +92,16 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
             }
             while (string.IsNullOrEmpty(cliente11[2]) || !validarCedula(cliente11[2]));
             Console.WriteLine("Digite su correo electronico");
-            do   
+            do
             {
                 cliente11[3] = Console.ReadLine();
                 if (string.IsNullOrEmpty(cliente11[3]))
                 {
                     Console.WriteLine("Este campo no puede estar vacío. Por favor, intente nuevamente.");
-                } 
+                }
                 else if (!ValidarEmail(cliente11[3]))
-                { 
-                
+                {
+
                     Console.WriteLine("Formato de correo electronico incorrecto");
                 }
             }
@@ -110,7 +109,7 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
 
             bool validarCedula(string cedula) //Se utiliza la funcion ValidarCedula para verificar que el formato del correo sea el indicado
             {
-                string formato = @"^\d{9}$"; 
+                string formato = @"^\d{9}$";
                 return Regex.IsMatch(cedula, formato);
             }
             bool ValidarEmail(string email) //Se utiliza la funcion ValidarEmail para verificar que el formato del correo sea el indicado
@@ -118,40 +117,44 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
                 string patron = @"^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$"; //Verifica que se cumpla el formato "usuario@dominio(gmail,hotmail).extension
                 return Regex.IsMatch(email, patron);
             }
-        
-        }
-
-        public void datosFactura()//Metodo que obtiene datos realiza impresión informativa al usuario y pregunta si desea imprimir factura
-        {
-            char imprime;
-            string fecha = DateTime.UtcNow.ToString("dd-MMM-yyyy");//Esatable fecha sin hora del sistema
-            string[] tabla = { "Cantidad", "Descripción", "Fecha", "Pago" };
-            Console.WriteLine($"{tabla[0],10} {tabla[1],8} {tabla[2],12} {tabla[3],10}");//Un pequeño arreglo que da orden a la tabla informativa.
-            Console.WriteLine($"   1         {cliente11[0],8}     {fecha,5}   {tarifa:c}");
-            Console.WriteLine($"           { cliente11[1],5}");
-            Console.WriteLine("");
-            Console.WriteLine("");
-            Console.WriteLine("");
-            Console.WriteLine("");
-            Console.WriteLine("");
-            Console.WriteLine($"Subtotal  {tarifa:c}");//la sintaxis variable:c se refiere al formato de moneda (toma el del sistema)
-            Console.WriteLine($"Impuesto   {iva:c}");
-            Console.WriteLine($"Total     {total:c}"); 
-            Console.WriteLine("");
-            Console.WriteLine("Imprimir Factura? Si(g)//Salir(s)"); //Mostrará todos los clientes que viaja incluyendo el que ingresamos por teclado
-            imprime = Convert.ToChar(Console.ReadLine());
-            if (imprime == 'g' || imprime == 'G')
-            {
-                Console.Clear();
-            }
-            else if (imprime == 's' || imprime == 'S')
-            {
-                Console.Clear();
-            }
         }
         
+       
 
+          public void DatosFactura()//Metodo que obtiene datos realiza impresión informativa al usuario y pregunta si desea imprimir factura
+          {
+                char imprime;
 
+                string[] tabla = { "Cantidad", "Descripción", "Fecha", "Pago" };
+                Console.WriteLine($"{tabla[0],10} {tabla[1],8} {tabla[2],12} {tabla[3],10}");//Un pequeño arreglo que da orden a la tabla informativa
+                Console.WriteLine($" 1           {cliente11[0],10}  {fecha,10}  {tarifa}");
+                
+                Console.WriteLine("");
+                Console.WriteLine("");
+                Console.WriteLine("");
+                Console.WriteLine("");
+                Console.WriteLine("");
+                Console.WriteLine($"Subtotal  {tarifa:c}");//la sintaxis variable:c se refiere al formato de moneda (toma el del sistema)
+                Console.WriteLine($"Impuesto   {iva:c}");
+                Console.WriteLine($"Total     {total:c}");
+                Console.WriteLine("");
+                Console.WriteLine("Imprimir Factura? Si(g)//Salir(s)"); //Mostrará todos los clientes que viaja incluyendo el que ingresamos por teclado
+                imprime = Convert.ToChar(Console.ReadLine());
+                if (imprime == 'g' || imprime == 'G')
+                {
+                    Console.Clear();
+                }
+                else if (imprime == 's' || imprime == 'S')
+                {
+                    Console.Clear();
+
+                }
+         
+                   
+          }
+
+        
+      
 
     }
 }

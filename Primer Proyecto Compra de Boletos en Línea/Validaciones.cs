@@ -7,12 +7,12 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
     class Validaciones
     {
         
-        Datos factura = new Datos(); //Instancia Clase Datos metodo registros
+        
 
         Datos horarios = new Datos();
 
         
-        public void validarHorarios()
+        public void ValidarHorarios()
         {
             int[] comparador = {1,0,1};
             Random cualquiera = new Random();
@@ -93,10 +93,12 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
             Console.WriteLine("5---Salir");
 
         }
+
           
 
-            public void PreguntaSiNo()//el metodo que valida si el usuario desea facturar, obteniendo datos de facturacion (cliente incluido por teclado)
-        {
+          public void PreguntaSiNo()//el metodo que valida si el usuario desea facturar, obteniendo datos de facturacion (cliente incluido por teclado)
+
+          {
             char elegir;
            
             Console.WriteLine("Facturar digite (f) ///o (s) para Salir");
@@ -108,7 +110,7 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
                 Console.Clear();
                 Console.WriteLine("/////////Facturación/////////");
                 Console.WriteLine("");
-                arreglo.datosFactura();
+                arreglo.DatosFactura();
               
                     
 

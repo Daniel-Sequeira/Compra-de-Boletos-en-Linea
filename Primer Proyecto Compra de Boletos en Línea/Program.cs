@@ -5,13 +5,13 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
     class Program
     {
         
-        static void Main(string[] args)//Main es lo primero que llama y ejecuta el programa.
+        static void Main(string[]args)//Main es lo primero que llama y ejecuta el programa.
         {
             Validaciones horarios = new Validaciones();
            
 
             Console.WriteLine("////// Horarios Ferry Puntarenas---Paquera//////");//Titulo en pantalla que verá el usuario
-            horarios.validarHorarios();
+            horarios.ValidarHorarios();
             
             bool continua = true;// variable que mientras no cambie su valor se repite ciclo while/ cambia cuando el usuario selecciona 5 salir
             int opcion; //variable que almacena la selección del usuario en el menu (switch)
@@ -32,7 +32,7 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
                     
                            Console.Clear();//limpia la pantalla de datos                         
                             Console.WriteLine("***Registro de Clientes***");//Muestra este titulo
-                             registro.registroCliente();//llama el metodo que llena el arreglo cliente11
+                             registro.RegistroCliente();//llama el metodo que llena el arreglo cliente11
                              factura.PreguntaSiNo();//llama el metodo que pregunta si desea facturar
                             break;//detiene el ciclo
 
@@ -40,7 +40,7 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
 
                             Console.Clear();
                             Console.WriteLine("***Registro de Clientes***");
-                            registro.registroCliente();
+                            registro.RegistroCliente();
                             factura.PreguntaSiNo();
                             break;
 
@@ -48,7 +48,7 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
 
                             Console.Clear();
                             Console.WriteLine("***Registro de Clientes***");
-                            registro.registroCliente();
+                            registro.RegistroCliente();
                             factura.PreguntaSiNo();
                             break;
 
@@ -56,7 +56,7 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
 
                             Console.Clear();
                             Console.WriteLine("***Registro de Clientes***");
-                            registro.registroCliente();
+                            registro.RegistroCliente();
                             factura.PreguntaSiNo();
                              break;
 
