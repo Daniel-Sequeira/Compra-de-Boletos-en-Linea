@@ -10,23 +10,6 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
 
 
         //Estado inicial de arreglo Horarios
-<<<<<<< Updated upstream
-
-        public int[] horario1 = new int[3];
-        public int[] horario2 = new int[3];
-        public int[] horario3 = new int[3];
-        public int[] horario4 = new int[3];
-        //Cliente
-        public string[] cliente11 = new string[4];
-
-
-
-
-
-        //Factura
-        public string[] facturaCliente = new string[4];
-        
-=======
 
         public int[] horario1;
         public int[] horario2;
@@ -47,7 +30,6 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
         public string[] cliente11;
 
         public string[] facturaCliente;
->>>>>>> Stashed changes
 
         public int tarifa;
         public double iva;
@@ -56,19 +38,6 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
 
         public void Infor()
         {
-<<<<<<< Updated upstream
-            string[] cliente1 = { " Roberto ", " Fernandez Esquivel ", " 101110222 ", " rfernandez @hotmail.com " };
-            string[] cliente2 = { " Luisa " + " Herrera Perez " + " 202220222 " + " lherrera@gmail.com " };
-            string[] cliente3 = { " Gabriel " + " Saenz Torres " + " 303330333 " + " gsaenz@yahoo.es " };
-            string[] cliente4 = { " Daniel " + " Alvarez Solano " + " 404440444 " + " dalvarez@yahoo.com " };
-            string[] cliente5 = { " Patricia " + " Sevilla Arias" + " 505550555 " + " psevilla25@gmail.com " };
-            string[] cliente6 = { " Miguel " + " Mora Prado " + " 606660666 " + " mmora@rocketmail.com " };
-            string[] cliente7 = { " Jorge " + " Salazar Arrieta " + " 707770777 " + " jsalazar88 @outlook.com" };
-            string[] cliente8 = { " Carolina " + " Arias Segura " + " 102210331 " + " carias@outlook.com " };
-            string[] cliente9 = { " Silvia " + " Monge Lizano " + " 102220332 " + " smonge@hotmail.com " };
-            string[] cliente10 = { " Sthepanie " + " Quesada Rojas " + " 102230333 " + " squesada17@gmail.com " };
-            
-=======
             int[] horario1 = new int[3];
             int[] horario2 = new int[3];
             int[] horario3 = new int[3];
@@ -77,9 +46,8 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
             string[] facturaCliente = new string[4];
 
             string[] cliente11 = new string[4];
->>>>>>> Stashed changes
 
-            string[] facturaCliente = {$"  1   {cliente11[0]} {cliente11[1]}  {fecha}  {tarifa} "};
+          
             fecha = DateTime.UtcNow.ToString("dd-MMM-yyyy");//Esatable fecha sin hora del sistema
             tarifa = 8000;
            iva = 0.16 * tarifa;
@@ -88,30 +56,6 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
 
 
         }
-<<<<<<< Updated upstream
-
-        public void RegistroCliente()//Metodo que llena el arreglo cliente11, solicitando y validando datos al usuario
-        {
-             
-           Console.WriteLine("Digite su nombre");
-           
-           cliente11[0] = Console.ReadLine();
-            
-           Console.WriteLine("Digite sus apellidos");
-            
-           cliente11[1] = Console.ReadLine();
-            
-           Console.WriteLine("Digite su cedula");
-           cliente11[2] = Console.ReadLine();
-             
-           Console.WriteLine("Digite su correo electronico");
-           cliente11[3] = Console.ReadLine();
-            
-           
-        }
-        
-       
-=======
         public void registroCliente()//Metodo que llena el arreglo cliente11, solicitando y validando datos al usuario
         {
 
@@ -144,7 +88,6 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
             Console.WriteLine("");
 
         }
->>>>>>> Stashed changes
 
           public void DatosFactura()//Metodo que obtiene datos realiza impresión informativa al usuario y pregunta si desea imprimir factura
           {
