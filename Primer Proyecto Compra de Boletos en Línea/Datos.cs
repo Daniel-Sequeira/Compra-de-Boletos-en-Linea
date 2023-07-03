@@ -86,8 +86,12 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
                 {
                     Console.WriteLine("Este campo no puede estar vacío. Por favor, intente nuevamente.");
                 }
+                else if (!validarCedula(cliente11[2]))
+                {
+                    Console.WriteLine("Formato invalido, asegurese de escribir un formato valido ejemplo ---> (202220222)");
+                }
             }
-            while (string.IsNullOrEmpty(cliente11[2]));
+            while (string.IsNullOrEmpty(cliente11[2]) || !ValidarEmail(cliente11[2]));
             Console.WriteLine("Digite su correo electronico");
             do   
             {
@@ -96,17 +100,23 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
                 {
                     Console.WriteLine("Este campo no puede estar vacío. Por favor, intente nuevamente.");
                 } 
-                else if (!IsvalidEmail(cliente11[3]))
+                else if (!ValidarEmail(cliente11[3]))
                 { 
                 
                     Console.WriteLine("Formato de correo electronico incorrecto");
                 }
             }
-            while (string.IsNullOrEmpty(cliente11[3]) || !IsvalidEmail(cliente11[3]));
-            bool IsvalidEmail(string email) //Se utiliza la funcion IsValidEmail para verificar que el formato del correo sea el indicado
+            while (string.IsNullOrEmpty(cliente11[3]) || !ValidarEmail(cliente11[3]));
+
+            bool validarCedula(string cedula) //Se utiliza la funcion ValidarCedula para verificar que el formato del correo sea el indicado
             {
-                string pattern = @"^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$";
-                return Regex.IsMatch(email, pattern);
+                string formato = @"^\{9}$"; 
+                return Regex.IsMatch(cedula, formato);
+            }
+            bool ValidarEmail(string email) //Se utiliza la funcion ValidarEmail para verificar que el formato del correo sea el indicado
+            {
+                string patron = @"^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$"; //Verifica que se cumpla el formato "usuario@dominio(gmail,hotmail).extension
+                return Regex.IsMatch(email, patron);
             }
         
         }
