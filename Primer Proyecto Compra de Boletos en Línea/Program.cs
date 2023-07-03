@@ -8,6 +8,7 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
         static void Main(string[]args)//Main es lo primero que llama y ejecuta el programa.
         {
             Validaciones horarios = new Validaciones();
+
            
 
             Console.WriteLine("////// Horarios Ferry Puntarenas---Paquera//////");//Titulo en pantalla que verá el usuario
@@ -32,7 +33,7 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
                     
                            Console.Clear();//limpia la pantalla de datos                         
                             Console.WriteLine("***Registro de Clientes***");//Muestra este titulo
-                             registro.RegistroCliente();//llama el metodo que llena el arreglo cliente11
+                            registro.RegistroCliente();//llama el metodo que llena el arreglo cliente11
                              factura.PreguntaSiNo();//llama el metodo que pregunta si desea facturar
                             break;//detiene el ciclo
 
