@@ -20,11 +20,11 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
 
             for (int i = 0; i < horarios.horario1.Length; i++)
             {
-                horarios.horario1[i] = cualquiera.Next(0, 3);
+                horarios.horario1[i] = cualquiera.Next(0, 4);
 
                 for (int j = 0; j < comparador.Length; j++)
                 {
-                    if (comparador[0] == horarios.horario1[0] && !horarioNodisponible)
+                    if (comparador[0] == horarios.horario1[2] && !horarioNodisponible)
                     {
                         Console.WriteLine("1---09:00h " + " Horario Lleno");
                         horarioNodisponible = true;
@@ -60,7 +60,7 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
                 horarios.horario3[i] = cualquiera.Next(0, 2);
                 for (int j = 0; j < comparador.Length; j++)
                 {
-                    if (comparador[0] == horarios.horario1[1] && !horarioNodisponible3)
+                    if (comparador[1] == horarios.horario1[1] && !horarioNodisponible3)
                     {
                         Console.WriteLine("3---15:00h  " + " Horario Lleno");
                         horarioNodisponible3 = true;
@@ -126,8 +126,40 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
             }
 
             
+            }
+        public void GuardaFactura()
+        {
+            Datos arreglofac = new Datos();
+            Datos arregloclient = new Datos();
+            Console.WriteLine("");
+            Console.WriteLine("Imprimir Factura? Si(g)//Salir(s)"); //Mostrará todos los clientes que viaja incluyendo el que ingresamos por teclado
+             string imprime = Console.ReadLine();
+            if (imprime == "g" || imprime == "G")
+            {
+                Console.Clear();
+                for (int i = 0; i <arreglofac.facturaCliente.Length; i++)
+                {
+                    arreglofac.facturaCliente[0] = "1";
+                    arreglofac.facturaCliente[1] = arregloclient.cliente11[1]+arregloclient.cliente11[2];
+                    arreglofac.facturaCliente[2] = factura.fecha;
+                    arreglofac.facturaCliente[3] = Convert.ToString(factura.total);
+                    foreach (string mostrar in arregloclient.cliente1)
+                    {
+                        Console.WriteLine("Todos los que viajan Puntarenas---Paquera");
+                        Console.WriteLine(mostrar);
+                    }
+                }         
+                
+            }
+            else if (imprime == "s" || imprime == "S")
+            {
+                
+            }
+
+
         }
-       
+
+
     }
 }
 
