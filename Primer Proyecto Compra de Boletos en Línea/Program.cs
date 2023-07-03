@@ -5,21 +5,13 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
     class Program
     {
         
-        static void Main(string[] args)//Main es lo primero que llama y ejecuta el prog
+        static void Main(string[] args)//Main es lo primero que llama y ejecuta el programa.
         {
             Validaciones horarios = new Validaciones();
            
 
             Console.WriteLine("////// Horarios Ferry Puntarenas---Paquera//////");//Titulo en pantalla que verá el usuario
             horarios.validarHorarios();
-          
-
-
-            /*Console.WriteLine("1------09:00 am"); //Horarios que se mostraran al usuario como opciones.
-            Console.WriteLine("2------12:00 pm");//comentariado para probara validacion horarios si funciona borrar
-            Console.WriteLine("3------15:00 pm");
-            Console.WriteLine("4------20:00 pm");
-            Console.WriteLine("5------Salir");*/
             
             bool continua = true;// variable que mientras no cambie su valor se repite ciclo while/ cambia cuando el usuario selecciona 5 salir
             int opcion; //variable que almacena la selección del usuario en el menu (switch)
