@@ -64,6 +64,7 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
 
                         case (5)://si usuario selecciona opcion 5 realizará
                             continua = false; //cambia el valor a falso entonces while no repite y sale del ciclo y finaliza el programa.
+                            Console.WriteLine("Hasta Luego");
                             break;
 
                     }

@@ -122,32 +122,7 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
 
 
         }
-        public void GuardaFactura()
-        {
-            Datos arreglofac = new Datos();
-            Datos arregloclient = new Datos();
-            Console.WriteLine("");
-            Console.WriteLine("Imprimir Factura? Si(g)//Salir(s)"); //Mostrará todos los clientes que viaja incluyendo el que ingresamos por teclado
-            string imprime = Console.ReadLine();
-            if (imprime == "g" || imprime == "G")
-            {
-                Console.Clear();
-                for (int i = 0; i < arreglofac.facturaCliente.Length; i++)
-                {
-                    arreglofac.facturaCliente[0] = "1";
-                    arreglofac.facturaCliente[1] = arregloclient.cliente11[1] + arregloclient.cliente11[2];
-                    arreglofac.facturaCliente[2] = arreglofac.fecha;
-                    arreglofac.facturaCliente[3] = Convert.ToString(arreglofac.total);
-                }
-
-            }
-            else if (imprime == "s" || imprime == "S")
-            {
-
-            }
-
-
-        }
+        
 
 
     }
