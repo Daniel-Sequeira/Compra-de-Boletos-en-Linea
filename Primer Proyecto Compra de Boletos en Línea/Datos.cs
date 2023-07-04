@@ -95,7 +95,7 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
                 }
             } while (string.IsNullOrEmpty(cliente11[1]));
 
-            Console.WriteLine("Digite su cedula de indentidad");
+            Console.WriteLine("Digite su cedula de identidad");
             do
             {
                 cliente11[2] = Console.ReadLine();
@@ -136,7 +136,7 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
                 {
                     DatosFactura();
                 }
-                if (decide == "s" || decide == "F")
+                if (decide == "s" || decide == "S")
                 {
                     Console.WriteLine("Hasta Luego");
                     break;
