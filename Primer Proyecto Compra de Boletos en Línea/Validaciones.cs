@@ -30,7 +30,7 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
             }
             if (!horarioNodisponible)
             {
-                Console.WriteLine("1---09:00h " + "Horario Dispoible");
+                Console.WriteLine("1---09:00h " + "Horario Disponible");
             }
 
             bool horarioNodisponible2 = false;
@@ -48,7 +48,7 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
             }
             if (!horarioNodisponible2)
             {
-                Console.WriteLine("2---12:00h  " + "Horario Dispoible");
+                Console.WriteLine("2---12:00h  " + "Horario Disponible");
             }
 
             bool horarioNodisponible3 = false;
@@ -66,7 +66,7 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
             }
             if (!horarioNodisponible3)
             {
-                Console.WriteLine("3---15:00h " + "Horario Dispoible");
+                Console.WriteLine("3---15:00h " + "Horario Disponible");
             }
 
             bool horarioNodisponible4 = false;
@@ -84,7 +84,7 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
             }
             if (!horarioNodisponible4)
             {
-                Console.WriteLine("4---20:00h " + "Horario Dispoible");
+                Console.WriteLine("4---20:00h " + "Horario Disponible");
             }
 
             Console.WriteLine("5---Salir");
