@@ -11,7 +11,7 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
 
         public void ValidarHorarios()
         {
-            int[] comparador = { 1, 0, 1 };
+            int[] comparador = { 1,0,2 };
             Random cualquiera = new Random();
             bool horarioNodisponible = false;
 
