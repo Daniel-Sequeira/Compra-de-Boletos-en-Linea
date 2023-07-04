@@ -138,7 +138,7 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
                 }
                 if (decide == "s" || decide == "S")
                 {
-                    Console.WriteLine("Hasta Luego");
+                    Environment.Exit(0);
                     break;
                 }
 
@@ -224,10 +224,10 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
                 }
                 if (imprime == "s" || imprime == "S")
                 {
-                    Console.WriteLine("Regresarás a Menú Principal");
+                    Environment.Exit(0);
                     break;
                 }
-            } while (imprime != "s");
+            } while (imprime != "s" || imprime != "S");
 
     
 
