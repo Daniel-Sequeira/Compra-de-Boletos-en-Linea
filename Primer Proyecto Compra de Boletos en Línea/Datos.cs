@@ -75,15 +75,55 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
         public void RegistroCliente()//Metodo que llena el arreglo cliente11, solicitando y validando datos al usuario
         {
 
-
             Console.WriteLine("Digite su nombre");
-            cliente11[0] = Console.ReadLine();
+            do
+            {
+                cliente11[0] = Console.ReadLine();
+                if (string.IsNullOrEmpty(cliente11[0]))
+                {
+                    Console.WriteLine("Este campo no puede estar vacio, por favor intente de nuevo");
+                }
+            } while (string.IsNullOrEmpty(cliente11[0]));
+
             Console.WriteLine("Digite sus apellidos");
-            cliente11[1] = Console.ReadLine();
-            Console.WriteLine("Digite su cedula");
-            cliente11[2] = Console.ReadLine();
+            do
+            {
+                cliente11[1] = Console.ReadLine();
+                if (string.IsNullOrEmpty(cliente11[1]))
+                {
+                    Console.WriteLine("Este campo no puede estar vacio, por favor intente de nuevo");
+                }
+            } while (string.IsNullOrEmpty(cliente11[1]));
+
+            Console.WriteLine("Digite su cedula de indentidad");
+            do
+            {
+                cliente11[2] = Console.ReadLine();
+                if (string.IsNullOrEmpty(cliente11[2]))
+                {
+                    Console.WriteLine("Este campo no puede estar vacio");
+                }
+                else if (!Validaciones.ValidarCedula(cliente11[2]))
+                {
+                    Console.WriteLine("Formato invalido, debe contener 9 digitos, intente de nuevo");
+                }
+            } while (string.IsNullOrEmpty(cliente11[2]) || !Validaciones.ValidarCedula(cliente11[2]));
+
             Console.WriteLine("Digite su correo electronico");
-            cliente11[3] = Console.ReadLine();
+            do
+            {
+                cliente11[3] = Console.ReadLine();
+                if (string.IsNullOrEmpty(cliente11[3]))
+                {
+                    Console.WriteLine("Este campo no puede estar vacio, por favor intente de nuevo");
+                }
+                else if (!Validaciones.ValidarEmail(cliente11[3]))
+                {
+                    Console.WriteLine("Formato de correo electronico incorrecto");
+                }
+            } while (string.IsNullOrEmpty(cliente11[3]) || !Validaciones.ValidarEmail(cliente11[3]));
+
+
             string decide;
             do
             {
@@ -189,9 +229,9 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
                 }
             } while (imprime != "s");
 
-    {
+    
 
-            }
+            
 
 
             

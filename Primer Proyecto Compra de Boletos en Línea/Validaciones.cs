@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.RegularExpressions;
 
 namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
 {
@@ -122,7 +123,19 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
 
 
         }
-        
+
+        public static bool ValidarCedula(string cedula) // El metodo que valida si el usuario ingresa de manera correcta su cedula
+        {
+            string patron = @"^\d{9}$";
+            return Regex.IsMatch(cedula, patron);
+        }
+
+        public static bool ValidarEmail(string email) // El metodo que valida si el usuario ingresa de manera correcta su correo
+        {
+            string patron = @"^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$";
+            return Regex.IsMatch(email, patron);
+        }
+
 
 
     }
