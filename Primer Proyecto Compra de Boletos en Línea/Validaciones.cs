@@ -14,13 +14,12 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
             int[] comparador = { 1,0,1 };
             Random cualquiera = new Random();
             bool horarioNodisponible;
-            Program opcion = new Program();
-
+          
             for (int i = 0; i < horarios.horario1.Length; i++)
             {
                 horarios.horario1[i] = cualquiera.Next(0, 2);
 
-                if (comparador[0] == horarios.horario1[1] )
+                if (comparador[1] == horarios.horario1[1] )
                 {
                     Console.WriteLine("1---09:00h " + " Horario Lleno");
                     horarioNodisponible = false;
@@ -29,7 +28,7 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
                     {
                         Console.WriteLine("Este horario está lleno, seleccione otro");                  
                     }
-                   
+                    break;
                 }
                 else
                 {
@@ -54,7 +53,7 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
                     if (horarioNodisponible2)
                     {
                         Console.WriteLine("Este horario está lleno, seleccione otro");
-                        break;
+                        
                     }
                     break;
                 }
@@ -81,7 +80,7 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
                     if (horarioNodisponible3)
                     {
                         Console.WriteLine("Este horario está lleno, seleccione otro");
-                        break;
+                        
                     }
                     break;
                 }
@@ -108,7 +107,7 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
                     if (horarioNodisponible4)
                     {
                         Console.WriteLine("Este horario está lleno, seleccione otro");
-                        break;
+                      
                     }
                     break;
                 }
