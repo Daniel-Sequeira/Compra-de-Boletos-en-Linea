@@ -5,41 +5,41 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
 {
     class Validaciones
     {
-        Datos horarios = new Datos();
+        Datos horarios = new Datos();//Instancia de clase datos para acceder a arreglos desde Clase validaciones
 
 
 
-        public void ValidarHorarios()
+        public void ValidarHorarios()//Método que establece si horario está lleno o no aleatoriamente.
         {
-            int[] comparador = { 1,0,1 };
-            Random cualquiera = new Random();
-            bool horarioNodisponible;
+            int[] comparador = { 1,0,1 };//Arreglo que almacena datos tipo entero utilizado para comparaciones.
+            Random cualquiera = new Random();// El metodo Rqandom genera numeros aleatorios 
+            bool horarioNodisponible;//Variable de condición true o false
           
-            for (int i = 0; i < horarios.horario1.Length; i++)
+            for (int i = 0; i < horarios.horario1.Length; i++)//Bucle For recorre los indices del arreglo horario 1 uno a uno
             {
-                horarios.horario1[i] = cualquiera.Next(0, 2);
+                horarios.horario1[i] = cualquiera.Next(0, 2);//Rellena los indices con numeros aleatorios 0 incluido 2 excluido
 
-                if (comparador[1] == horarios.horario1[1] )
-                {
+                if (comparador[1] == horarios.horario1[1] ) //Comparación de indices [1] entre arreglos según coincidencia o no determina la impresión
+                {                                          // Horario LLeno o Disponible
                     Console.WriteLine("1---09:00h " + " Horario Lleno");
-                    horarioNodisponible = false;
+                    horarioNodisponible = false;//Si el horario está Lleno la variable toma condición de false con idea de reducir condicion de LLeno o disponible valores booleanos.
 
                     if (horarioNodisponible)
                     {
                         Console.WriteLine("Este horario está lleno, seleccione otro");                  
                     }
-                    break;
+                    break;//Sale del ciclo.
                 }
                 else
                 {
-                    Console.WriteLine("1---09:00h " + "Horario Disponible");
-                    
+                    Console.WriteLine("1---09:00h " + "Horario Disponible");//de no cumplirse lo anterior el horario está disponible (true)
+                    horarioNodisponible = true;
 
                     break;
                 }
                 
             }
-            
+                                //El siguiente código realiza las comparaciones como descritas anteriormente.
 
             bool horarioNodisponible2;
             for (int i = 0; i < horarios.horario2.Length; i++)
@@ -53,14 +53,14 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
                     if (horarioNodisponible2)
                     {
                         Console.WriteLine("Este horario está lleno, seleccione otro");
-                        
+                       
                     }
                     break;
                 }
                 else
                 {
                     Console.WriteLine("2---12:00h  " + "Horario Disponible");
-                  
+                    horarioNodisponible = true;
                     break;
 
                 }
@@ -87,7 +87,7 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
                 else
                 {
                     Console.WriteLine("3---15:00h " + "Horario Disponible");
-                  
+                    horarioNodisponible3 = true;
                     break;
                 }
                 
@@ -114,33 +114,33 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
                 else
                 {
                     Console.WriteLine("4---20:00h " + "Horario Disponible");
-                    
+                    horarioNodisponible = true;
                     break;
                 }
 
                 
             }
        
-            Console.WriteLine("5---Salir");
+            Console.WriteLine("5---Salir");//Imprime en pantalla opción de salida
 
         }
 
 
-        public void PreguntaSiNo()//el metodo que valida si el usuario desea facturar, obteniendo datos de facturacion (cliente incluido por teclado)
+        public void PreguntaSiNo()//El metodo que valida si el usuario desea facturar, obteniendo datos de facturacion (cliente incluido por teclado)
 
         {
-            char elegir;
+            char elegir;//Variable que almacena valor ingresado por teclado por el usuario.
 
-            Console.WriteLine("Facturar digite (f) ///o (s) para Salir");
-            elegir = Convert.ToChar(Console.ReadLine());
+            Console.WriteLine("Facturar digite (f) ///o (s) para Salir");//Imprime en pantalla si desea facturar
+            elegir = Convert.ToChar(Console.ReadLine()); //Almacena valor ingresado por teclado por el usuario.
 
-            if (elegir == 'f' || elegir == 'F') //establece true con f mayuscula o minuscula y ejecuta el código
+            if (elegir == 'f' || elegir == 'F') //Condicional if establece true con f mayuscula o minuscula y ejecuta el código
             {
                 Datos arreglo = new Datos();
                 Console.Clear();
                 Console.WriteLine("/////////Facturación/////////");
-                Console.WriteLine("");
-                arreglo.DatosFactura();
+                Console.WriteLine("");//Espacio en blanco
+                arreglo.DatosFactura();//Muestra los títulos del formato de la factura almacenados en arreglo DatosFactura
 
 
 
@@ -148,7 +148,7 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
 
             else if (elegir == 's' || elegir == 'S') //Salida del programa si selecciona s o S
             {
-                Console.WriteLine("Gracias vuelva pronto");
+                Environment.Exit(0); //Sale del programa
             }
             else
             {
@@ -160,14 +160,14 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
 
         public static bool ValidarCedula(string cedula) // El metodo que valida si el usuario ingresa de manera correcta su cedula
         {
-            string patron = @"^\d{9}$";
-            return Regex.IsMatch(cedula, patron);
-        }
+            string patron = @"^\d{9}$";//Define una variable llamada patron que contiene una expresión regular (cadena de 9 digitos)
+            return Regex.IsMatch(cedula, patron);//Método IsMatch de la clase Regex valida si la cadena de texto almacenada en la variable cedula 
+        }                                        //coincide con el patrón definido anteriormente.
 
         public static bool ValidarEmail(string email) // El metodo que valida si el usuario ingresa de manera correcta su correo
         {
-            string patron = @"^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$";
-            return Regex.IsMatch(email, patron);
+            string patron = @"^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$"; //La expresión regular @"^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$"valida si cadena coincide con formato dirección email.
+            return Regex.IsMatch(email, patron);//verificar si la cadena de texto almacenada en la variable email coincide con el patrón definido anteriormente.
         }
 
 
