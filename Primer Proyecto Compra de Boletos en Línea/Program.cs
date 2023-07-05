@@ -25,11 +25,10 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
 
                 if (int.TryParse(numero, out opcion)) //valida si es verdadero que el usuario digitó 1,2,3,4 o 5, de lo contrario Else.
                 {
-                    
-                    
+                   
                     switch (opcion) //Realiza acciones de acuerdo a selección de usuario
-                    {
-                        
+                    {    
+                           
                         case (1)://si usurio selecciona opcion 1 realizará
                     
                            Console.Clear();//limpia la pantalla de datos                         

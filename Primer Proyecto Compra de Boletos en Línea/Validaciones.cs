@@ -11,82 +11,117 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
 
         public void ValidarHorarios()
         {
-            int[] comparador = { 1,0,2 };
+            int[] comparador = { 1,0,1 };
             Random cualquiera = new Random();
-            bool horarioNodisponible = false;
+            bool horarioNodisponible;
+            Program opcion = new Program();
 
             for (int i = 0; i < horarios.horario1.Length; i++)
             {
-                horarios.horario1[i] = cualquiera.Next(0, 3);
+                horarios.horario1[i] = cualquiera.Next(0, 2);
 
-                for (int j = 0; j < comparador.Length; j++)
+                if (comparador[0] == horarios.horario1[1] )
                 {
-                    if (comparador[0] == horarios.horario1[2] && !horarioNodisponible)
-                    {
-                        Console.WriteLine("1---09:00h " + " Horario Lleno");
-                        horarioNodisponible = true;
-                    }
-                }
-            }
-            if (!horarioNodisponible)
-            {
-                Console.WriteLine("1---09:00h " + "Horario Disponible");
-            }
+                    Console.WriteLine("1---09:00h " + " Horario Lleno");
+                    horarioNodisponible = false;
 
-            bool horarioNodisponible2 = false;
+                    if (horarioNodisponible)
+                    {
+                        Console.WriteLine("Este horario está lleno, seleccione otro");                  
+                    }
+                   
+                }
+                else
+                {
+                    Console.WriteLine("1---09:00h " + "Horario Disponible");
+                    
+
+                    break;
+                }
+                
+            }
+            
+
+            bool horarioNodisponible2;
             for (int i = 0; i < horarios.horario2.Length; i++)
             {
                 horarios.horario2[i] = cualquiera.Next(0, 2);
-                for (int j = 0; j < comparador.Length; j++)
+               
+                if (comparador[0] == horarios.horario1[2] )
                 {
-                    if (comparador[0] == horarios.horario1[1] && !horarioNodisponible2)
+                    Console.WriteLine("2---12:00h " + " Horario Lleno");
+                    horarioNodisponible2 = false;
+                    if (horarioNodisponible2)
                     {
-                        Console.WriteLine("2---12:00h " + " Horario Lleno");
-                        horarioNodisponible2 = true;
+                        Console.WriteLine("Este horario está lleno, seleccione otro");
+                        break;
                     }
+                    break;
                 }
-            }
-            if (!horarioNodisponible2)
-            {
-                Console.WriteLine("2---12:00h  " + "Horario Disponible");
+                else
+                {
+                    Console.WriteLine("2---12:00h  " + "Horario Disponible");
+                  
+                    break;
+
+                }
+                
             }
 
-            bool horarioNodisponible3 = false;
+      
+            bool horarioNodisponible3;
             for (int i = 0; i < horarios.horario3.Length; i++)
             {
                 horarios.horario3[i] = cualquiera.Next(0, 2);
-                for (int j = 0; j < comparador.Length; j++)
+                
+                if (comparador[0] == horarios.horario1[0])
                 {
-                    if (comparador[1] == horarios.horario1[1] && !horarioNodisponible3)
+                    Console.WriteLine("3---15:00h  " + " Horario Lleno");
+                    horarioNodisponible3 = false;
+                    if (horarioNodisponible3)
                     {
-                        Console.WriteLine("3---15:00h  " + " Horario Lleno");
-                        horarioNodisponible3 = true;
+                        Console.WriteLine("Este horario está lleno, seleccione otro");
+                        break;
                     }
+                    break;
                 }
-            }
-            if (!horarioNodisponible3)
-            {
-                Console.WriteLine("3---15:00h " + "Horario Disponible");
+                else
+                {
+                    Console.WriteLine("3---15:00h " + "Horario Disponible");
+                  
+                    break;
+                }
+                
             }
 
-            bool horarioNodisponible4 = false;
+
+                 bool horarioNodisponible4;
             for (int i = 0; i < horarios.horario4.Length; i++)
             {
+                
                 horarios.horario4[i] = cualquiera.Next(0, 2);
-                for (int j = 0; j < comparador.Length; j++)
+               
+                if (comparador[1] == horarios.horario1[0])
                 {
-                    if (comparador[0] == horarios.horario1[0] && !horarioNodisponible4)
+                    Console.WriteLine("4---20:00h " + " Horario Lleno");
+                    horarioNodisponible4 = false;
+                    if (horarioNodisponible4)
                     {
-                        Console.WriteLine("4---20:00h " + " Horario Lleno");
-                        horarioNodisponible4 = true;
+                        Console.WriteLine("Este horario está lleno, seleccione otro");
+                        break;
                     }
+                    break;
                 }
-            }
-            if (!horarioNodisponible4)
-            {
-                Console.WriteLine("4---20:00h " + "Horario Disponible");
-            }
+                else
+                {
+                    Console.WriteLine("4---20:00h " + "Horario Disponible");
+                    
+                    break;
+                }
 
+                
+            }
+       
             Console.WriteLine("5---Salir");
 
         }
