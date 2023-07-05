@@ -124,9 +124,9 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
             } while (string.IsNullOrEmpty(cliente11[3]) || !Validaciones.ValidarEmail(cliente11[3]));
 
 
-            string decide;
-            do
-            {
+            string decide; //variable que almacena la desición sobre si usuario desea facturar o no
+            do// ciclo do ejecuta el codigo una vez mientras (while) no sea afirmativo de lo contrario se sobre entiende que el usuario no desea facturar
+            {    // por tanto al elegir salir sale del programa.
                 Console.Clear();
                 Console.WriteLine("Desea Facturar SI(f)----NO(s)");//Texto que verá usuario en pantalla.
 
