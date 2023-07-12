@@ -219,7 +219,7 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
                         Console.WriteLine(item);
                     }
                     Console.WriteLine(Cliente11());
-                    Console.ReadKey(); 
+                    Environment.Exit(0);
 
 
                 }
@@ -229,13 +229,13 @@ namespace Primer_Proyecto_Compra_de_Boletos_en_Línea
                     break;
                 }
             } while (imprime != "s" || imprime != "S");
-
-    
-
-            
+          
 
 
-            
+
+
+
+
         }
     }   
         
